@@ -1,0 +1,14 @@
+node_modules/
+.pnpm-store/
+.cache/
+knowledge/index/
+dev.cordis.yml
+.env
+.env.*
+!.env.example
+.credentials*
+*.log
+coverage/
+dist/
+.DS_Store
+Thumbs.db
