@@ -1,0 +1,4 @@
+# dsh-evidence-agent bundle patch layer — applied to any profile listing this bundle.
+- insert:
+    - id: dsh-evidence-agent
+      name: dsh-evidence-agent
