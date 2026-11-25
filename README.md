@@ -17,6 +17,10 @@ Generated with [dsh-plugin-starter](https://github.com/ciceroyang/dsh-plugin-sta
 
     node --test
 
+查看测试覆盖率：
+
+    npm run test:coverage
+
 用 --patch 覆盖层加载(插件路径必须绝对):
 
     dsh --profile headless --patch ./dev.cordis.yml "任务"
