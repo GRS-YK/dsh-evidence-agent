@@ -31,6 +31,20 @@ Generated with [dsh-plugin-starter](https://github.com/ciceroyang/dsh-plugin-sta
 
     npm run knowledge:manifest:check
 
+## Markdown 切分
+
+`lib/chunker.js` 按标题层级切分 Markdown，保留标题路径、真实行号和少量重叠。
+每个 chunk 的默认上限是约 600 tokens：
+
+```js
+import { chunkMarkdown } from './lib/chunker.js'
+
+const chunks = chunkMarkdown(markdown, {
+  docId: 'dsh-first-plugin',
+  title: 'Your first plugin',
+})
+```
+
 ## 安装
 
     dsh plugin --profile web add <本目录>
