@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-11-25T09:35:10.924Z",
+  "expected_questions": 60,
+  "strategies": {
+    "no_rag": {
+      "expected_answers": 60,
+      "answer_count": 60,
+      "judged_answers": 50,
+      "answer_accuracy": 0.68,
+      "faithfulness": null,
+      "citation_gold_accuracy": null,
+      "citation_locator_validity": null,
+      "citation_coverage": 0,
+      "refusal_accuracy": 1,
+      "false_refusal_rate": 0.24,
+      "average_latency_ms": 7147.6,
+      "p95_latency_ms": 14334,
+      "average_evidence_tool_calls": 0,
+      "average_tool_calls": 0,
+      "average_tokens": 1176.45,
+      "missing_question_ids": [],
+      "unjudged_answer_ids": []
+    },
+    "dense": {
+      "expected_answers": 60,
+      "answer_count": 60,
+      "judged_answers": 50,
+      "answer_accuracy": 0.88,
+      "faithfulness": 0.98,
+      "citation_gold_accuracy": 0.5981308411214953,
+      "citation_locator_validity": 1,
+      "citation_coverage": 0.96,
+      "refusal_accuracy": 1,
+      "false_refusal_rate": 0.1,
+      "average_latency_ms": 3137.7,
+      "p95_latency_ms": 5674,
+      "average_evidence_tool_calls": 0,
+      "average_tool_calls": 0,
+      "average_tokens": 2309.7,
+      "missing_question_ids": [],
+      "unjudged_answer_ids": []
+    },
+    "hybrid": {
+      "expected_answers": 60,
+      "answer_count": 60,
+      "judged_answers": 50,
+      "answer_accuracy": 0.92,
+      "faithfulness": 0.98,
+      "citation_gold_accuracy": 0.5877192982456141,
+      "citation_locator_validity": 0.9736842105263158,
+      "citation_coverage": 0.96,
+      "refusal_accuracy": 1,
+      "false_refusal_rate": 0.1,
+      "average_latency_ms": 3042.4333333333334,
+      "p95_latency_ms": 5573,
+      "average_evidence_tool_calls": 0,
+      "average_tool_calls": 0,
+      "average_tokens": 2413.233333333333,
+      "missing_question_ids": [],
+      "unjudged_answer_ids": []
+    },
+    "agentic": {
+      "expected_answers": 60,
+      "answer_count": 60,
+      "judged_answers": 50,
+      "answer_accuracy": 0.98,
+      "faithfulness": 0.98,
+      "citation_gold_accuracy": 0.4663677130044843,
+      "citation_locator_validity": 0.9820627802690582,
+      "citation_coverage": 0.96,
+      "refusal_accuracy": 1,
+      "false_refusal_rate": 0,
+      "average_latency_ms": 9630.4,
+      "p95_latency_ms": 18289,
+      "average_evidence_tool_calls": 2.15,
+      "average_tool_calls": 3.15,
+      "average_tokens": 8559.266666666666,
+      "missing_question_ids": [],
+      "unjudged_answer_ids": []
+    }
+  },
+  "label_sources": [
+    "llm"
+  ],
+  "notes": [
+    "> Answer correctness and faithfulness are N/A until explicit judgement records cover the answers.",
+    "> Citation accuracy checks cited doc_id and line ranges against gold chunks from the evaluation dataset.",
+    "> Refusal accuracy is computed only for questions whose dataset type is `unanswerable`.",
+    "> A returned candidate is not itself an incorrect answer; generation and refusal are evaluated separately."
+  ]
+}

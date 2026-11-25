@@ -9,6 +9,7 @@ dev.cordis.yml
 .credentials*
 *.log
 coverage/
+eval/cache/
 dist/
 .DS_Store
 Thumbs.db

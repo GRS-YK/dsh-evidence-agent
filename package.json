@@ -1,18 +1,32 @@
 {
   "name": "dsh-evidence-agent",
   "version": "0.1.0",
-  "description": "A DeepSeek Harness plugin.",
+  "description": "Source-backed Agentic RAG for DeepSeek Harness with BGE-M3, BM25, RRF, citations, and a hard evidence-call budget.",
+  "author": "GRS-YK",
   "type": "module",
   "main": "index.js",
   "files": [
     "index.js",
     "lib",
+    "eval",
+    "docs",
     "skills",
     "knowledge/sources.json",
     "knowledge/manifest.jsonl",
     "knowledge/canonical",
-    "cordis.patch.yml"
+    "cordis.patch.yml",
+    "README.en.md",
+    "SECURITY.md",
+    "CHANGELOG.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GRS-YK/dsh-evidence-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GRS-YK/dsh-evidence-agent/issues"
+  },
+  "homepage": "https://github.com/GRS-YK/dsh-evidence-agent#readme",
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
@@ -29,12 +43,25 @@
     "bm25:build": "node scripts/build-bm25-index.js",
     "bm25:check": "node scripts/build-bm25-index.js --check",
     "bm25:search": "node scripts/search-bm25.js",
-    "hybrid:search": "node scripts/search-hybrid.js"
+    "hybrid:search": "node scripts/search-hybrid.js",
+    "eval:retrieval": "node eval/run-retrieval.js",
+    "eval:retrieval:lexical": "node eval/run-retrieval.js --lexical-only",
+    "eval:answers": "node eval/run-answer-eval.js",
+    "eval:generate": "node eval/generate-answers.js",
+    "eval:generate:hybrid": "node eval/generate-answers.js --strategy hybrid",
+    "eval:judge": "node eval/generate-judgements.js",
+    "eval:abstention": "node eval/reclassify-abstention.js"
   },
   "keywords": [
     "deepseek-harness",
     "dsh",
-    "dsh-plugin"
+    "dsh-plugin",
+    "agentic-rag",
+    "rag",
+    "retrieval",
+    "bm25",
+    "bge-m3",
+    "citations"
   ],
   "license": "MIT",
   "engines": {

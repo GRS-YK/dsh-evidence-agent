@@ -6,6 +6,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { EvidenceInputError } from '../lib/evidence-errors.js'
+import { EvidenceCallBudget } from '../lib/evidence-call-budget.js'
 import {
   TOOL_NAMES,
   registerEvidenceTools,
@@ -14,7 +15,7 @@ import {
   renderSourceList,
 } from '../lib/evidence-plugin.js'
 
-function fakeToolRuntime(service) {
+function fakeToolRuntime(service, budget) {
   const definitions = []
   const disposers = []
   const ctx = {
@@ -39,6 +40,7 @@ function fakeToolRuntime(service) {
     defineTool: definition => definition,
     ToolArgsError,
     service,
+    budget,
   })
   return { definitions, returnedDisposers, ToolArgsError }
 }
@@ -108,23 +110,60 @@ test('tool executors forward arguments and caller cancellation', async () => {
   const { definitions } = fakeToolRuntime(service)
   const controller = new AbortController()
 
-  assert.equal(
+  assert.deepEqual(
     await definitions[0].execute(
       { query: 'alpha', top_k: 2, mode: 'lexical' },
-      { signal: controller.signal },
+      { signal: controller.signal, agent: { id: 'session-one' } },
     ),
-    searchValue,
+    { ...searchValue, budget_remaining: 3 },
   )
   await definitions[1].execute(
     { doc_id: 'doc', chunk_id: 'chunk', neighbor_count: 2 },
-    { signal: controller.signal },
+    { signal: controller.signal, agent: { id: 'session-one' } },
   )
-  await definitions[2].execute({ limit: 4 }, { signal: controller.signal })
+  await definitions[2].execute(
+    { limit: 4 },
+    { signal: controller.signal, agent: { id: 'session-one' } },
+  )
 
   assert.equal(calls[0][1].signal, controller.signal)
   assert.equal(calls[0][1].topK, 2)
   assert.equal(calls[1][1].neighborCount, 2)
   assert.equal(calls[2][1].limit, 4)
+})
+
+test('tool budget rejects a fifth evidence operation without calling the service', async () => {
+  let searchCalls = 0
+  const service = {
+    async search(options) {
+      searchCalls += 1
+      return {
+        query: options.query,
+        mode: 'lexical',
+        status: 'ok',
+        hits: [],
+        truncated: false,
+      }
+    },
+    async read() {},
+    async listSources() {},
+  }
+  const budget = new EvidenceCallBudget({ maxCalls: 4 })
+  const { definitions } = fakeToolRuntime(service, budget)
+  const exec = {
+    signal: new AbortController().signal,
+    agent: { id: 'session-one' },
+  }
+
+  for (let index = 0; index < 4; index += 1) {
+    await definitions[0].execute({ query: `query-${index}`, mode: 'lexical' }, exec)
+  }
+  const denied = await definitions[0].execute({ query: 'query-5', mode: 'lexical' }, exec)
+
+  assert.equal(searchCalls, 4)
+  assert.equal(denied.status, 'unavailable')
+  assert.equal(denied.budget_remaining, 0)
+  assert.match(denied.notice, /budget exhausted/i)
 })
 
 test('argument errors become ToolArgsError; cancellation is not swallowed', async () => {
@@ -171,9 +210,11 @@ test('tool renderers expose citations, context, and source ranges', () => {
       section: 'Search',
     }],
     truncated: false,
+    budget_remaining: 3,
   })
   assert.match(search, /doc-one/)
   assert.match(search, /lines 10-20/)
+  assert.match(search, /budget_remaining=3/)
 
   const read = renderRead({
     status: 'truncated',
@@ -190,10 +231,12 @@ test('tool renderers expose citations, context, and source ranges', () => {
       text: 'More evidence.',
     }],
     truncated: true,
+    budget_remaining: 2,
     next_chunk_id: 'doc-one-c003',
   })
   assert.match(read, /next_chunk_id: doc-one-c003/)
   assert.match(read, /More evidence/)
+  assert.match(read, /budget_remaining=2/)
 
   const list = renderSourceList({
     status: 'ok',
@@ -206,7 +249,9 @@ test('tool renderers expose citations, context, and source ranges', () => {
       updated_at: '2026-11-25',
     }],
     truncated: false,
+    budget_remaining: 1,
   })
   assert.match(list, /doc-one/)
   assert.match(list, /3 chunks/)
+  assert.match(list, /budget_remaining=1/)
 })

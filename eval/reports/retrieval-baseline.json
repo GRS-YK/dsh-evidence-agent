@@ -1,0 +1,4978 @@
+{
+  "generated_at": "2026-11-25T08:24:29.817Z",
+  "dataset": {
+    "path": "eval/questions.jsonl",
+    "total": 60,
+    "by_type": {
+      "single_hop": 35,
+      "multi_hop": 15,
+      "unanswerable": 10
+    }
+  },
+  "retrieval": {
+    "top_k": 5,
+    "candidate_k": 20,
+    "rank_constant": 60,
+    "bm25": {
+      "chunk_count": 78
+    },
+    "embedding": {
+      "model": "BAAI/bge-m3",
+      "dimension": 1024,
+      "unique_queries": 132
+    }
+  },
+  "strategies": {
+    "no_rag": {
+      "description": "No retrieval baseline. Retrieval metrics are not applicable."
+    },
+    "hybrid_raw_question": {
+      "question_count": 60,
+      "error_count": 0,
+      "recall_at_k": 0.91,
+      "hit_rate_at_k": 0.94,
+      "mrr_at_k": 0.7290000000000001,
+      "unanswerable_evidence_return_rate": 1,
+      "average_search_ms": 0.6599083333333208,
+      "average_evidence_calls": 1,
+      "by_type": {
+        "single_hop": {
+          "count": 35,
+          "recall_at_k": 0.9428571428571428,
+          "hit_rate_at_k": 0.9428571428571428,
+          "mrr_at_k": 0.7057142857142857,
+          "evidence_return_rate": 1
+        },
+        "multi_hop": {
+          "count": 15,
+          "recall_at_k": 0.8333333333333334,
+          "hit_rate_at_k": 0.9333333333333333,
+          "mrr_at_k": 0.7833333333333333,
+          "evidence_return_rate": 1
+        },
+        "unanswerable": {
+          "count": 10,
+          "recall_at_k": null,
+          "hit_rate_at_k": null,
+          "mrr_at_k": null,
+          "evidence_return_rate": 1
+        }
+      },
+      "per_question": {
+        "s01": {
+          "type": "single_hop",
+          "question": "DeepSeek Harness 中 plugin 本质上是什么？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c001",
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 3.2150000000001455,
+          "evidence_calls": 1
+        },
+        "s02": {
+          "type": "single_hop",
+          "question": "教程中的最小插件文件应该导出哪些内容？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c001",
+            "dsh-build-tool-c001",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c011"
+          ],
+          "latency_ms": 1.602799999999661,
+          "evidence_calls": 1
+        },
+        "s03": {
+          "type": "single_hop",
+          "question": "本地插件如何在 cordis.yml 中注册？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c005"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c011",
+            "dsh-build-tool-c003",
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.6550999999999476,
+          "evidence_calls": 1
+        },
+        "s04": {
+          "type": "single_hop",
+          "question": "为什么通过 ctx 注册的监听器和工具不需要手动清理？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c006",
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c004"
+          ],
+          "latency_ms": 0.99579999999969,
+          "evidence_calls": 1
+        },
+        "s05": {
+          "type": "single_hop",
+          "question": "插件依赖 tools 服务时应该声明在哪里？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c006"
+          ],
+          "latency_ms": 0.6556000000000495,
+          "evidence_calls": 1
+        },
+        "s06": {
+          "type": "single_hop",
+          "question": "插件的 object form 和 function form 有什么表面差别？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c008",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.5502999999998792,
+          "evidence_calls": 1
+        },
+        "s07": {
+          "type": "single_hop",
+          "question": "DSH 工具定义中 defineTool 用来做什么？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c002",
+            "dsh-build-tool-c001",
+            "dsh-build-tool-c003",
+            "dsh-first-plugin-c011",
+            "dsh-first-plugin-c001"
+          ],
+          "latency_ms": 0.6142999999992753,
+          "evidence_calls": 1
+        },
+        "s08": {
+          "type": "single_hop",
+          "question": "教程要求怎样启动并在 Web UI 中调用新工具？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c001",
+            "dsh-first-plugin-c001",
+            "dsh-build-tool-c003",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c005"
+          ],
+          "latency_ms": 1.0317999999997483,
+          "evidence_calls": 1
+        },
+        "s09": {
+          "type": "single_hop",
+          "question": "DSH 工具教程之后推荐继续学习哪些主题？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c003",
+            "dsh-first-plugin-c011",
+            "dsh-build-tool-c001",
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 1.4274999999997817,
+          "evidence_calls": 1
+        },
+        "s10": {
+          "type": "single_hop",
+          "question": "scaled dot-product attention 的计算张量维度如何定义？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "milvus-rrf-ranker-c015",
+            "transformers-kv-cache-c004",
+            "milvus-rrf-ranker-c016",
+            "transformers-kv-cache-c003"
+          ],
+          "latency_ms": 0.6603999999997541,
+          "evidence_calls": 1
+        },
+        "s11": {
+          "type": "single_hop",
+          "question": "基础 Cache 接口接收和返回什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c014",
+            "transformers-kv-cache-c003"
+          ],
+          "latency_ms": 0.4920000000001892,
+          "evidence_calls": 1
+        },
+        "s12": {
+          "type": "single_hop",
+          "question": "KV Cache 在内存中如何组织？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c011",
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "latency_ms": 0.44129999999950087,
+          "evidence_calls": 1
+        },
+        "s13": {
+          "type": "single_hop",
+          "question": "为什么多轮对话需要 cache 已计算的 key 和 value？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c001"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-c003"
+          ],
+          "latency_ms": 0.7074999999995271,
+          "evidence_calls": 1
+        },
+        "s14": {
+          "type": "single_hop",
+          "question": "Transformers 的默认 cache 类是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c009",
+            "transformers-kv-cache-strategies-c004"
+          ],
+          "latency_ms": 0.4621999999999389,
+          "evidence_calls": 1
+        },
+        "s15": {
+          "type": "single_hop",
+          "question": "固定大小 cache 为什么有利于 JIT 优化？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.5543000000006941,
+          "evidence_calls": 1
+        },
+        "s16": {
+          "type": "single_hop",
+          "question": "为什么有些编译后端需要把生成张量保留在 CPU？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c005"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c005",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c012"
+          ],
+          "latency_ms": 0.8888000000006286,
+          "evidence_calls": 1
+        },
+        "s17": {
+          "type": "single_hop",
+          "question": "长上下文生成时 KV cache 为什么会成为内存瓶颈？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.743199999999888,
+          "evidence_calls": 1
+        },
+        "s18": {
+          "type": "single_hop",
+          "question": "QuantizedCache 通过什么方式降低内存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c009",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c007",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.5293000000001484,
+          "evidence_calls": 1
+        },
+        "s19": {
+          "type": "single_hop",
+          "question": "EncoderDecoderCache 管理哪些缓存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.3886000000002241,
+          "evidence_calls": 1
+        },
+        "s20": {
+          "type": "single_hop",
+          "question": "哪些模型可能需要专用 cache 实现？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c011"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c011",
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.5387999999993554,
+          "evidence_calls": 1
+        },
+        "s21": {
+          "type": "single_hop",
+          "question": "迭代生成中的 cache 与普通生成有什么联系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.6134000000001834,
+          "evidence_calls": 1
+        },
+        "s22": {
+          "type": "single_hop",
+          "question": "Cache.crop 的用途是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c014"
+          ],
+          "latency_ms": 0.395900000000438,
+          "evidence_calls": 1
+        },
+        "s23": {
+          "type": "single_hop",
+          "question": "Prefix caching 如何复用 KV cache？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c014"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c014",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "latency_ms": 0.35980000000017753,
+          "evidence_calls": 1
+        },
+        "s24": {
+          "type": "single_hop",
+          "question": "Retrieval 系统里的 query analysis 包含哪些阶段？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c003",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c009"
+          ],
+          "latency_ms": 0.5826000000006388,
+          "evidence_calls": 1
+        },
+        "s25": {
+          "type": "single_hop",
+          "question": "为什么复杂或表述不好的查询需要 query rewriting？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c008"
+          ],
+          "latency_ms": 0.6383000000005268,
+          "evidence_calls": 1
+        },
+        "s26": {
+          "type": "single_hop",
+          "question": "LangChain 文档列出了哪些 query rewriting 技术？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c006"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c016",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c005"
+          ],
+          "latency_ms": 0.5375999999996566,
+          "evidence_calls": 1
+        },
+        "s27": {
+          "type": "single_hop",
+          "question": "怎样用提示词做 query decomposition？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c005"
+          ],
+          "latency_ms": 0.4405000000006112,
+          "evidence_calls": 1
+        },
+        "s28": {
+          "type": "single_hop",
+          "question": "Query construction 在检索中做什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c008"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c007"
+          ],
+          "latency_ms": 0.4367999999994936,
+          "evidence_calls": 1
+        },
+        "s29": {
+          "type": "single_hop",
+          "question": "Lexical retrieval 的基本匹配思路是什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c002",
+            "langchain-retrieval-c016",
+            "langchain-retrieval-c011",
+            "langchain-retrieval-c010"
+          ],
+          "latency_ms": 0.5595999999995911,
+          "evidence_calls": 1
+        },
+        "s30": {
+          "type": "single_hop",
+          "question": "Vector indexes 与词典匹配方法有什么不同？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c013",
+            "langchain-retrieval-c002",
+            "langchain-retrieval-c012",
+            "milvus-rrf-ranker-c015",
+            "milvus-rrf-ranker-c014"
+          ],
+          "latency_ms": 0.5671000000002095,
+          "evidence_calls": 1
+        },
+        "s31": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的核心目标是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c001"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c009",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c014"
+          ],
+          "latency_ms": 0.4539999999997235,
+          "evidence_calls": 1
+        },
+        "s32": {
+          "type": "single_hop",
+          "question": "什么场景适合使用 RRF Ranker？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c002"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c009",
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c014",
+            "milvus-rrf-ranker-c008"
+          ],
+          "latency_ms": 0.43220000000019354,
+          "evidence_calls": 1
+        },
+        "s33": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的工作流程有哪几步？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c009",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c014"
+          ],
+          "latency_ms": 0.46600000000034925,
+          "evidence_calls": 1
+        },
+        "s34": {
+          "type": "single_hop",
+          "question": "RRF 的 k 参数是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c007",
+            "milvus-rrf-ranker-c009",
+            "milvus-rrf-ranker-c012",
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c003"
+          ],
+          "latency_ms": 0.3514999999997599,
+          "evidence_calls": 1
+        },
+        "s35": {
+          "type": "single_hop",
+          "question": "rank_bm25 如何初始化 BM25Okapi？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004"
+          ],
+          "ranked_chunk_ids": [
+            "rank-bm25-c004",
+            "rank-bm25-c001",
+            "rank-bm25-c002",
+            "rank-bm25-c003",
+            "milvus-rrf-ranker-c010"
+          ],
+          "latency_ms": 0.3969999999999345,
+          "evidence_calls": 1
+        },
+        "m01": {
+          "type": "multi_hop",
+          "question": "DSH plugin 的加载入口和资源自动清理机制如何配合？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c006",
+            "dsh-first-plugin-c003"
+          ],
+          "latency_ms": 0.7189000000007582,
+          "evidence_calls": 1
+        },
+        "m02": {
+          "type": "multi_hop",
+          "question": "从最小插件到注册一个 greet Tool 需要补哪些代码？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c001",
+            "dsh-build-tool-c002",
+            "dsh-build-tool-c003",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c011"
+          ],
+          "latency_ms": 0.6822999999994863,
+          "evidence_calls": 1
+        },
+        "m03": {
+          "type": "multi_hop",
+          "question": "在 DSH 中注册工具为什么必须先声明 tools 依赖？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c001",
+            "dsh-build-tool-c003",
+            "dsh-first-plugin-c001"
+          ],
+          "latency_ms": 0.7758999999996377,
+          "evidence_calls": 1
+        },
+        "m04": {
+          "type": "multi_hop",
+          "question": "DSH 插件的 object form 与 class form 分别怎么组织？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c008",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c003",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.6984000000002197,
+          "evidence_calls": 1
+        },
+        "m05": {
+          "type": "multi_hop",
+          "question": "Transformer 的 attention 张量与 KV Cache 保存的键值有什么关系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.7758000000003449,
+          "evidence_calls": 1
+        },
+        "m06": {
+          "type": "multi_hop",
+          "question": "KV Cache 的内存结构如何影响默认动态扩容策略？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.7120999999997366,
+          "evidence_calls": 1
+        },
+        "m07": {
+          "type": "multi_hop",
+          "question": "固定大小 cache 与 cache offloading 分别解决什么不同问题？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c007",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 1.013400000000729,
+          "evidence_calls": 1
+        },
+        "m08": {
+          "type": "multi_hop",
+          "question": "QuantizedCache 与 EncoderDecoderCache 的设计目标有什么区别？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-strategies-c009",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.688799999999901,
+          "evidence_calls": 1
+        },
+        "m09": {
+          "type": "multi_hop",
+          "question": "迭代生成为什么同时需要 cache 管理和 crop 能力？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.6327000000001135,
+          "evidence_calls": 1
+        },
+        "m10": {
+          "type": "multi_hop",
+          "question": "Query rewriting 与 query decomposition 如何配合处理复杂问题？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c009"
+          ],
+          "latency_ms": 0.5033999999996013,
+          "evidence_calls": 1
+        },
+        "m11": {
+          "type": "multi_hop",
+          "question": "Lexical search 与 vector indexes 的召回机制有什么互补性？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c002",
+            "langchain-retrieval-c013",
+            "milvus-rrf-ranker-c015",
+            "milvus-rrf-ranker-c017"
+          ],
+          "latency_ms": 0.5450000000000728,
+          "evidence_calls": 1
+        },
+        "m12": {
+          "type": "multi_hop",
+          "question": "RRF 的计算流程和 k 参数如何共同影响重排？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c007",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c009",
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c012"
+          ],
+          "latency_ms": 0.6291000000001077,
+          "evidence_calls": 1
+        },
+        "m13": {
+          "type": "multi_hop",
+          "question": "RRF 的显式算例与加权 search path 有什么关系？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c010"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c012"
+          ],
+          "latency_ms": 0.5183999999999287,
+          "evidence_calls": 1
+        },
+        "m14": {
+          "type": "multi_hop",
+          "question": "rank_bm25 的查询流程如何体现 lexical retrieval 的基本思想？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004",
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "rank-bm25-c001",
+            "rank-bm25-c005",
+            "langchain-retrieval-c010",
+            "rank-bm25-c004"
+          ],
+          "latency_ms": 0.5528999999996813,
+          "evidence_calls": 1
+        },
+        "m15": {
+          "type": "multi_hop",
+          "question": "pytrec_eval 与 TREC 官方评测工具是什么关系，怎么安装？",
+          "gold_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c007",
+            "pytrec-eval-c003",
+            "pytrec-eval-c006",
+            "pytrec-eval-c004"
+          ],
+          "latency_ms": 0.5911999999998443,
+          "evidence_calls": 1
+        },
+        "u01": {
+          "type": "unanswerable",
+          "question": "知识库里有没有 dsh-evidence-agent 的商业收入、融资或定价数据？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c003",
+            "langchain-retrieval-c010",
+            "dsh-first-plugin-c005",
+            "pytrec-eval-c007",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.6841999999996915,
+          "evidence_calls": 1
+        },
+        "u02": {
+          "type": "unanswerable",
+          "question": "本项目要求的最低 CUDA 版本是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c007",
+            "pytrec-eval-c002",
+            "transformers-kv-cache-strategies-c008",
+            "rank-bm25-c002",
+            "milvus-rrf-ranker-c015"
+          ],
+          "latency_ms": 0.4938000000001921,
+          "evidence_calls": 1
+        },
+        "u03": {
+          "type": "unanswerable",
+          "question": "在 RTX 4090 上运行完整评测的平均延迟是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "pytrec-eval-c004",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c002",
+            "milvus-rrf-ranker-c015"
+          ],
+          "latency_ms": 0.5663999999997031,
+          "evidence_calls": 1
+        },
+        "u04": {
+          "type": "unanswerable",
+          "question": "维护这个项目的团队有多少人？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "rank-bm25-c001",
+            "milvus-rrf-ranker-c008",
+            "transformers-kv-cache-c004",
+            "milvus-rrf-ranker-c016",
+            "pytrec-eval-c007"
+          ],
+          "latency_ms": 0.5025999999998021,
+          "evidence_calls": 1
+        },
+        "u05": {
+          "type": "unanswerable",
+          "question": "知识库有没有列出 GPT-5 API 的价格？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c011",
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c012",
+            "pytrec-eval-c007",
+            "rank-bm25-c001"
+          ],
+          "latency_ms": 0.45499999999992724,
+          "evidence_calls": 1
+        },
+        "u06": {
+          "type": "unanswerable",
+          "question": "这个项目当前有哪些付费客户？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c016",
+            "milvus-rrf-ranker-c015",
+            "pytrec-eval-c007",
+            "milvus-rrf-ranker-c008",
+            "dsh-first-plugin-c010"
+          ],
+          "latency_ms": 0.4754000000002634,
+          "evidence_calls": 1
+        },
+        "u07": {
+          "type": "unanswerable",
+          "question": "项目承诺的正式生产 SLA 可用性是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "pytrec-eval-c007",
+            "pytrec-eval-c004",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.522000000000844,
+          "evidence_calls": 1
+        },
+        "u08": {
+          "type": "unanswerable",
+          "question": "v1.0 的正式发布日期是哪一天？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c011",
+            "milvus-rrf-ranker-c012",
+            "dsh-first-plugin-c005",
+            "pytrec-eval-c004",
+            "milvus-rrf-ranker-c010"
+          ],
+          "latency_ms": 0.46159999999963475,
+          "evidence_calls": 1
+        },
+        "u09": {
+          "type": "unanswerable",
+          "question": "知识库里是否包含 DeepSeek API Key？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c004",
+            "langchain-retrieval-c016",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.42410000000018044,
+          "evidence_calls": 1
+        },
+        "u10": {
+          "type": "unanswerable",
+          "question": "这个项目正式部署在哪些云厂商和区域？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "rank-bm25-c002",
+            "dsh-first-plugin-c005",
+            "pytrec-eval-c007",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c001"
+          ],
+          "latency_ms": 0.5841999999993277,
+          "evidence_calls": 1
+        }
+      }
+    },
+    "lexical": {
+      "question_count": 60,
+      "error_count": 0,
+      "recall_at_k": 0.91,
+      "hit_rate_at_k": 1,
+      "mrr_at_k": 0.9366666666666665,
+      "unanswerable_evidence_return_rate": 1,
+      "average_search_ms": 0.09024166666663405,
+      "average_evidence_calls": 1,
+      "by_type": {
+        "single_hop": {
+          "count": 35,
+          "recall_at_k": 1,
+          "hit_rate_at_k": 1,
+          "mrr_at_k": 0.938095238095238,
+          "evidence_return_rate": 1
+        },
+        "multi_hop": {
+          "count": 15,
+          "recall_at_k": 0.7,
+          "hit_rate_at_k": 1,
+          "mrr_at_k": 0.9333333333333333,
+          "evidence_return_rate": 1
+        },
+        "unanswerable": {
+          "count": 10,
+          "recall_at_k": null,
+          "hit_rate_at_k": null,
+          "mrr_at_k": null,
+          "evidence_return_rate": 1
+        }
+      },
+      "per_question": {
+        "s01": {
+          "type": "single_hop",
+          "question": "DeepSeek Harness 中 plugin 本质上是什么？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.12510000000020227,
+          "evidence_calls": 1
+        },
+        "s02": {
+          "type": "single_hop",
+          "question": "教程中的最小插件文件应该导出哪些内容？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c009"
+          ],
+          "latency_ms": 0.07949999999982538,
+          "evidence_calls": 1
+        },
+        "s03": {
+          "type": "single_hop",
+          "question": "本地插件如何在 cordis.yml 中注册？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c005"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c003",
+            "dsh-build-tool-c003",
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.09649999999965075,
+          "evidence_calls": 1
+        },
+        "s04": {
+          "type": "single_hop",
+          "question": "为什么通过 ctx 注册的监听器和工具不需要手动清理？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c006",
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010"
+          ],
+          "latency_ms": 0.08300000000053842,
+          "evidence_calls": 1
+        },
+        "s05": {
+          "type": "single_hop",
+          "question": "插件依赖 tools 服务时应该声明在哪里？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c010",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c009",
+            "langchain-retrieval-c009"
+          ],
+          "latency_ms": 0.07510000000002037,
+          "evidence_calls": 1
+        },
+        "s06": {
+          "type": "single_hop",
+          "question": "插件的 object form 和 function form 有什么表面差别？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c008",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c003"
+          ],
+          "latency_ms": 0.08239999999932479,
+          "evidence_calls": 1
+        },
+        "s07": {
+          "type": "single_hop",
+          "question": "DSH 工具定义中 defineTool 用来做什么？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c011",
+            "dsh-build-tool-c004",
+            "dsh-build-tool-c001",
+            "dsh-build-tool-c003"
+          ],
+          "latency_ms": 0.08059999999932188,
+          "evidence_calls": 1
+        },
+        "s08": {
+          "type": "single_hop",
+          "question": "教程要求怎样启动并在 Web UI 中调用新工具？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c003",
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c001",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c001"
+          ],
+          "latency_ms": 0.09130000000004657,
+          "evidence_calls": 1
+        },
+        "s09": {
+          "type": "single_hop",
+          "question": "DSH 工具教程之后推荐继续学习哪些主题？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c011",
+            "dsh-build-tool-c001",
+            "dsh-first-plugin-c003",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.09709999999995489,
+          "evidence_calls": 1
+        },
+        "s10": {
+          "type": "single_hop",
+          "question": "scaled dot-product attention 的计算张量维度如何定义？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.14360000000033324,
+          "evidence_calls": 1
+        },
+        "s11": {
+          "type": "single_hop",
+          "question": "基础 Cache 接口接收和返回什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "latency_ms": 0.13690000000042346,
+          "evidence_calls": 1
+        },
+        "s12": {
+          "type": "single_hop",
+          "question": "KV Cache 在内存中如何组织？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "latency_ms": 0.11489999999957945,
+          "evidence_calls": 1
+        },
+        "s13": {
+          "type": "single_hop",
+          "question": "为什么多轮对话需要 cache 已计算的 key 和 value？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c001"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.09220000000004802,
+          "evidence_calls": 1
+        },
+        "s14": {
+          "type": "single_hop",
+          "question": "Transformers 的默认 cache 类是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c014"
+          ],
+          "latency_ms": 0.0684000000001106,
+          "evidence_calls": 1
+        },
+        "s15": {
+          "type": "single_hop",
+          "question": "固定大小 cache 为什么有利于 JIT 优化？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "latency_ms": 0.07150000000001455,
+          "evidence_calls": 1
+        },
+        "s16": {
+          "type": "single_hop",
+          "question": "为什么有些编译后端需要把生成张量保留在 CPU？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c005"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c005",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c012"
+          ],
+          "latency_ms": 0.09490000000005239,
+          "evidence_calls": 1
+        },
+        "s17": {
+          "type": "single_hop",
+          "question": "长上下文生成时 KV cache 为什么会成为内存瓶颈？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "latency_ms": 0.08689999999933207,
+          "evidence_calls": 1
+        },
+        "s18": {
+          "type": "single_hop",
+          "question": "QuantizedCache 通过什么方式降低内存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c011"
+          ],
+          "latency_ms": 0.08759999999983847,
+          "evidence_calls": 1
+        },
+        "s19": {
+          "type": "single_hop",
+          "question": "EncoderDecoderCache 管理哪些缓存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c011",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.07690000000002328,
+          "evidence_calls": 1
+        },
+        "s20": {
+          "type": "single_hop",
+          "question": "哪些模型可能需要专用 cache 实现？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c011"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c011",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "latency_ms": 0.11130000000048312,
+          "evidence_calls": 1
+        },
+        "s21": {
+          "type": "single_hop",
+          "question": "迭代生成中的 cache 与普通生成有什么联系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.10949999999957072,
+          "evidence_calls": 1
+        },
+        "s22": {
+          "type": "single_hop",
+          "question": "Cache.crop 的用途是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.0967000000000553,
+          "evidence_calls": 1
+        },
+        "s23": {
+          "type": "single_hop",
+          "question": "Prefix caching 如何复用 KV cache？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c014"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c014",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-c003"
+          ],
+          "latency_ms": 0.11099999999987631,
+          "evidence_calls": 1
+        },
+        "s24": {
+          "type": "single_hop",
+          "question": "Retrieval 系统里的 query analysis 包含哪些阶段？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c003",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c005"
+          ],
+          "latency_ms": 0.07889999999952124,
+          "evidence_calls": 1
+        },
+        "s25": {
+          "type": "single_hop",
+          "question": "为什么复杂或表述不好的查询需要 query rewriting？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c014",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c003"
+          ],
+          "latency_ms": 0.11670000000049185,
+          "evidence_calls": 1
+        },
+        "s26": {
+          "type": "single_hop",
+          "question": "LangChain 文档列出了哪些 query rewriting 技术？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c006"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c016",
+            "transformers-kv-cache-c002"
+          ],
+          "latency_ms": 0.09519999999974971,
+          "evidence_calls": 1
+        },
+        "s27": {
+          "type": "single_hop",
+          "question": "怎样用提示词做 query decomposition？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c016"
+          ],
+          "latency_ms": 0.10030000000006112,
+          "evidence_calls": 1
+        },
+        "s28": {
+          "type": "single_hop",
+          "question": "Query construction 在检索中做什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c008"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c016",
+            "langchain-retrieval-c002"
+          ],
+          "latency_ms": 0.11859999999978754,
+          "evidence_calls": 1
+        },
+        "s29": {
+          "type": "single_hop",
+          "question": "Lexical retrieval 的基本匹配思路是什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "rank-bm25-c005",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c002"
+          ],
+          "latency_ms": 0.13920000000052823,
+          "evidence_calls": 1
+        },
+        "s30": {
+          "type": "single_hop",
+          "question": "Vector indexes 与词典匹配方法有什么不同？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c002",
+            "langchain-retrieval-c013",
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c005"
+          ],
+          "latency_ms": 0.10399999999935972,
+          "evidence_calls": 1
+        },
+        "s31": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的核心目标是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c001"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c014",
+            "milvus-rrf-ranker-c017"
+          ],
+          "latency_ms": 0.11340000000018335,
+          "evidence_calls": 1
+        },
+        "s32": {
+          "type": "single_hop",
+          "question": "什么场景适合使用 RRF Ranker？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c002"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c012",
+            "milvus-rrf-ranker-c013",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c007"
+          ],
+          "latency_ms": 0.12550000000010186,
+          "evidence_calls": 1
+        },
+        "s33": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的工作流程有哪几步？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c002"
+          ],
+          "latency_ms": 0.09329999999954453,
+          "evidence_calls": 1
+        },
+        "s34": {
+          "type": "single_hop",
+          "question": "RRF 的 k 参数是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c009",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c007",
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c010"
+          ],
+          "latency_ms": 0.06719999999950232,
+          "evidence_calls": 1
+        },
+        "s35": {
+          "type": "single_hop",
+          "question": "rank_bm25 如何初始化 BM25Okapi？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004"
+          ],
+          "ranked_chunk_ids": [
+            "rank-bm25-c004",
+            "rank-bm25-c005",
+            "rank-bm25-c001",
+            "rank-bm25-c002",
+            "rank-bm25-c003"
+          ],
+          "latency_ms": 0.09289999999964493,
+          "evidence_calls": 1
+        },
+        "m01": {
+          "type": "multi_hop",
+          "question": "DSH plugin 的加载入口和资源自动清理机制如何配合？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.10469999999986612,
+          "evidence_calls": 1
+        },
+        "m02": {
+          "type": "multi_hop",
+          "question": "从最小插件到注册一个 greet Tool 需要补哪些代码？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c009"
+          ],
+          "latency_ms": 0.08359999999993306,
+          "evidence_calls": 1
+        },
+        "m03": {
+          "type": "multi_hop",
+          "question": "在 DSH 中注册工具为什么必须先声明 tools 依赖？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c010",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c004"
+          ],
+          "latency_ms": 0.06599999999980355,
+          "evidence_calls": 1
+        },
+        "m04": {
+          "type": "multi_hop",
+          "question": "DSH 插件的 object form 与 class form 分别怎么组织？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c008"
+          ],
+          "latency_ms": 0.0511000000005879,
+          "evidence_calls": 1
+        },
+        "m05": {
+          "type": "multi_hop",
+          "question": "Transformer 的 attention 张量与 KV Cache 保存的键值有什么关系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-c003",
+            "milvus-rrf-ranker-c017"
+          ],
+          "latency_ms": 0.10449999999946158,
+          "evidence_calls": 1
+        },
+        "m06": {
+          "type": "multi_hop",
+          "question": "KV Cache 的内存结构如何影响默认动态扩容策略？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "latency_ms": 0.0842000000002372,
+          "evidence_calls": 1
+        },
+        "m07": {
+          "type": "multi_hop",
+          "question": "固定大小 cache 与 cache offloading 分别解决什么不同问题？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c005",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.07110000000011496,
+          "evidence_calls": 1
+        },
+        "m08": {
+          "type": "multi_hop",
+          "question": "QuantizedCache 与 EncoderDecoderCache 的设计目标有什么区别？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c004"
+          ],
+          "latency_ms": 0.04960000000028231,
+          "evidence_calls": 1
+        },
+        "m09": {
+          "type": "multi_hop",
+          "question": "迭代生成为什么同时需要 cache 管理和 crop 能力？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "latency_ms": 0.056999999999789,
+          "evidence_calls": 1
+        },
+        "m10": {
+          "type": "multi_hop",
+          "question": "Query rewriting 与 query decomposition 如何配合处理复杂问题？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c014",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c003"
+          ],
+          "latency_ms": 0.07269999999971333,
+          "evidence_calls": 1
+        },
+        "m11": {
+          "type": "multi_hop",
+          "question": "Lexical search 与 vector indexes 的召回机制有什么互补性？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c002",
+            "rank-bm25-c005",
+            "rank-bm25-c001"
+          ],
+          "latency_ms": 0.06980000000021391,
+          "evidence_calls": 1
+        },
+        "m12": {
+          "type": "multi_hop",
+          "question": "RRF 的计算流程和 k 参数如何共同影响重排？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c002"
+          ],
+          "latency_ms": 0.07229999999981374,
+          "evidence_calls": 1
+        },
+        "m13": {
+          "type": "multi_hop",
+          "question": "RRF 的显式算例与加权 search path 有什么关系？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c010"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c011",
+            "milvus-rrf-ranker-c009",
+            "milvus-rrf-ranker-c001"
+          ],
+          "latency_ms": 0.09490000000005239,
+          "evidence_calls": 1
+        },
+        "m14": {
+          "type": "multi_hop",
+          "question": "rank_bm25 的查询流程如何体现 lexical retrieval 的基本思想？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004",
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "rank-bm25-c005",
+            "rank-bm25-c004",
+            "rank-bm25-c003",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c005"
+          ],
+          "latency_ms": 0.06520000000000437,
+          "evidence_calls": 1
+        },
+        "m15": {
+          "type": "multi_hop",
+          "question": "pytrec_eval 与 TREC 官方评测工具是什么关系，怎么安装？",
+          "gold_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c006",
+            "pytrec-eval-c007",
+            "pytrec-eval-c004",
+            "pytrec-eval-c003"
+          ],
+          "latency_ms": 0.06709999999930005,
+          "evidence_calls": 1
+        },
+        "u01": {
+          "type": "unanswerable",
+          "question": "知识库里有没有 dsh-evidence-agent 的商业收入、融资或定价数据？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c014",
+            "transformers-kv-cache-strategies-c007",
+            "langchain-retrieval-c007",
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c011"
+          ],
+          "latency_ms": 0.08470000000033906,
+          "evidence_calls": 1
+        },
+        "u02": {
+          "type": "unanswerable",
+          "question": "本项目要求的最低 CUDA 版本是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "rank-bm25-c002",
+            "transformers-kv-cache-strategies-c007",
+            "transformers-kv-cache-strategies-c006",
+            "rank-bm25-c001"
+          ],
+          "latency_ms": 0.06490000000030705,
+          "evidence_calls": 1
+        },
+        "u03": {
+          "type": "unanswerable",
+          "question": "在 RTX 4090 上运行完整评测的平均延迟是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c004",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.07400000000052387,
+          "evidence_calls": 1
+        },
+        "u04": {
+          "type": "unanswerable",
+          "question": "维护这个项目的团队有多少人？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c002"
+          ],
+          "latency_ms": 0.049200000000382715,
+          "evidence_calls": 1
+        },
+        "u05": {
+          "type": "unanswerable",
+          "question": "知识库有没有列出 GPT-5 API 的价格？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c011",
+            "transformers-kv-cache-c002",
+            "milvus-rrf-ranker-c008",
+            "pytrec-eval-c004",
+            "milvus-rrf-ranker-c004"
+          ],
+          "latency_ms": 0.06069999999999709,
+          "evidence_calls": 1
+        },
+        "u06": {
+          "type": "unanswerable",
+          "question": "这个项目当前有哪些付费客户？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c012",
+            "rank-bm25-c004",
+            "langchain-retrieval-c013",
+            "langchain-retrieval-c015"
+          ],
+          "latency_ms": 0.06310000000030414,
+          "evidence_calls": 1
+        },
+        "u07": {
+          "type": "unanswerable",
+          "question": "项目承诺的正式生产 SLA 可用性是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c010",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c007",
+            "milvus-rrf-ranker-c014",
+            "rank-bm25-c001"
+          ],
+          "latency_ms": 0.06120000000009895,
+          "evidence_calls": 1
+        },
+        "u08": {
+          "type": "unanswerable",
+          "question": "v1.0 的正式发布日期是哪一天？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "pytrec-eval-c005",
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c011",
+            "pytrec-eval-c004",
+            "milvus-rrf-ranker-c012"
+          ],
+          "latency_ms": 0.13299999999981083,
+          "evidence_calls": 1
+        },
+        "u09": {
+          "type": "unanswerable",
+          "question": "知识库里是否包含 DeepSeek API Key？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c011",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c004"
+          ],
+          "latency_ms": 0.17190000000027794,
+          "evidence_calls": 1
+        },
+        "u10": {
+          "type": "unanswerable",
+          "question": "这个项目正式部署在哪些云厂商和区域？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c004",
+            "rank-bm25-c001"
+          ],
+          "latency_ms": 0.07989999999972497,
+          "evidence_calls": 1
+        }
+      }
+    },
+    "dense": {
+      "question_count": 60,
+      "error_count": 0,
+      "recall_at_k": 0.89,
+      "hit_rate_at_k": 0.98,
+      "mrr_at_k": 0.9206666666666667,
+      "unanswerable_evidence_return_rate": 1,
+      "average_search_ms": 0.11873000000000503,
+      "average_evidence_calls": 1,
+      "by_type": {
+        "single_hop": {
+          "count": 35,
+          "recall_at_k": 0.9714285714285714,
+          "hit_rate_at_k": 0.9714285714285714,
+          "mrr_at_k": 0.92,
+          "evidence_return_rate": 1
+        },
+        "multi_hop": {
+          "count": 15,
+          "recall_at_k": 0.7,
+          "hit_rate_at_k": 1,
+          "mrr_at_k": 0.9222222222222223,
+          "evidence_return_rate": 1
+        },
+        "unanswerable": {
+          "count": 10,
+          "recall_at_k": null,
+          "hit_rate_at_k": null,
+          "mrr_at_k": null,
+          "evidence_return_rate": 1
+        }
+      },
+      "per_question": {
+        "s01": {
+          "type": "single_hop",
+          "question": "DeepSeek Harness 中 plugin 本质上是什么？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c001",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c005"
+          ],
+          "latency_ms": 0.2150999999994383,
+          "evidence_calls": 1
+        },
+        "s02": {
+          "type": "single_hop",
+          "question": "教程中的最小插件文件应该导出哪些内容？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c003"
+          ],
+          "latency_ms": 0.13800000000082946,
+          "evidence_calls": 1
+        },
+        "s03": {
+          "type": "single_hop",
+          "question": "本地插件如何在 cordis.yml 中注册？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c005"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c011",
+            "dsh-first-plugin-c009"
+          ],
+          "latency_ms": 0.12109999999938736,
+          "evidence_calls": 1
+        },
+        "s04": {
+          "type": "single_hop",
+          "question": "为什么通过 ctx 注册的监听器和工具不需要手动清理？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c006",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c004",
+            "dsh-build-tool-c002",
+            "transformers-kv-cache-strategies-c012"
+          ],
+          "latency_ms": 0.12049999999999272,
+          "evidence_calls": 1
+        },
+        "s05": {
+          "type": "single_hop",
+          "question": "插件依赖 tools 服务时应该声明在哪里？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c010",
+            "dsh-build-tool-c002",
+            "dsh-build-tool-c001"
+          ],
+          "latency_ms": 0.12049999999999272,
+          "evidence_calls": 1
+        },
+        "s06": {
+          "type": "single_hop",
+          "question": "插件的 object form 和 function form 有什么表面差别？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c008",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.12210000000050059,
+          "evidence_calls": 1
+        },
+        "s07": {
+          "type": "single_hop",
+          "question": "DSH 工具定义中 defineTool 用来做什么？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c002",
+            "dsh-build-tool-c004",
+            "langchain-retrieval-c009",
+            "dsh-first-plugin-c011",
+            "milvus-rrf-ranker-c009"
+          ],
+          "latency_ms": 0.12100000000009459,
+          "evidence_calls": 1
+        },
+        "s08": {
+          "type": "single_hop",
+          "question": "教程要求怎样启动并在 Web UI 中调用新工具？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c002",
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c001",
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c003"
+          ],
+          "latency_ms": 0.11959999999999127,
+          "evidence_calls": 1
+        },
+        "s09": {
+          "type": "single_hop",
+          "question": "DSH 工具教程之后推荐继续学习哪些主题？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c011",
+            "dsh-build-tool-c001",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c001"
+          ],
+          "latency_ms": 0.12250000000040018,
+          "evidence_calls": 1
+        },
+        "s10": {
+          "type": "single_hop",
+          "question": "scaled dot-product attention 的计算张量维度如何定义？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-c003"
+          ],
+          "latency_ms": 0.13450000000011642,
+          "evidence_calls": 1
+        },
+        "s11": {
+          "type": "single_hop",
+          "question": "基础 Cache 接口接收和返回什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c004"
+          ],
+          "latency_ms": 0.12449999999989814,
+          "evidence_calls": 1
+        },
+        "s12": {
+          "type": "single_hop",
+          "question": "KV Cache 在内存中如何组织？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-strategies-c004"
+          ],
+          "latency_ms": 0.11670000000049185,
+          "evidence_calls": 1
+        },
+        "s13": {
+          "type": "single_hop",
+          "question": "为什么多轮对话需要 cache 已计算的 key 和 value？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c001"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "latency_ms": 0.11300000000028376,
+          "evidence_calls": 1
+        },
+        "s14": {
+          "type": "single_hop",
+          "question": "Transformers 的默认 cache 类是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.11239999999997963,
+          "evidence_calls": 1
+        },
+        "s15": {
+          "type": "single_hop",
+          "question": "固定大小 cache 为什么有利于 JIT 优化？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "latency_ms": 0.113999999999578,
+          "evidence_calls": 1
+        },
+        "s16": {
+          "type": "single_hop",
+          "question": "为什么有些编译后端需要把生成张量保留在 CPU？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c005"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c005",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "latency_ms": 0.11239999999997963,
+          "evidence_calls": 1
+        },
+        "s17": {
+          "type": "single_hop",
+          "question": "长上下文生成时 KV cache 为什么会成为内存瓶颈？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c007",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.11319999999977881,
+          "evidence_calls": 1
+        },
+        "s18": {
+          "type": "single_hop",
+          "question": "QuantizedCache 通过什么方式降低内存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c009"
+          ],
+          "latency_ms": 0.11239999999997963,
+          "evidence_calls": 1
+        },
+        "s19": {
+          "type": "single_hop",
+          "question": "EncoderDecoderCache 管理哪些缓存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.11799999999948341,
+          "evidence_calls": 1
+        },
+        "s20": {
+          "type": "single_hop",
+          "question": "哪些模型可能需要专用 cache 实现？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c011"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c011",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "latency_ms": 0.11509999999998399,
+          "evidence_calls": 1
+        },
+        "s21": {
+          "type": "single_hop",
+          "question": "迭代生成中的 cache 与普通生成有什么联系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "latency_ms": 0.11259999999947468,
+          "evidence_calls": 1
+        },
+        "s22": {
+          "type": "single_hop",
+          "question": "Cache.crop 的用途是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c004",
+            "langchain-retrieval-c010",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.11279999999987922,
+          "evidence_calls": 1
+        },
+        "s23": {
+          "type": "single_hop",
+          "question": "Prefix caching 如何复用 KV cache？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c014"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c014",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c011"
+          ],
+          "latency_ms": 0.11230000000068685,
+          "evidence_calls": 1
+        },
+        "s24": {
+          "type": "single_hop",
+          "question": "Retrieval 系统里的 query analysis 包含哪些阶段？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c010"
+          ],
+          "latency_ms": 0.11279999999987922,
+          "evidence_calls": 1
+        },
+        "s25": {
+          "type": "single_hop",
+          "question": "为什么复杂或表述不好的查询需要 query rewriting？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c012"
+          ],
+          "latency_ms": 0.113999999999578,
+          "evidence_calls": 1
+        },
+        "s26": {
+          "type": "single_hop",
+          "question": "LangChain 文档列出了哪些 query rewriting 技术？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c006"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c005",
+            "transformers-kv-cache-strategies-c013",
+            "langchain-retrieval-c009"
+          ],
+          "latency_ms": 0.11290000000008149,
+          "evidence_calls": 1
+        },
+        "s27": {
+          "type": "single_hop",
+          "question": "怎样用提示词做 query decomposition？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c010",
+            "langchain-retrieval-c008"
+          ],
+          "latency_ms": 0.11290000000008149,
+          "evidence_calls": 1
+        },
+        "s28": {
+          "type": "single_hop",
+          "question": "Query construction 在检索中做什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c008"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c005"
+          ],
+          "latency_ms": 0.11670000000049185,
+          "evidence_calls": 1
+        },
+        "s29": {
+          "type": "single_hop",
+          "question": "Lexical retrieval 的基本匹配思路是什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "rank-bm25-c001",
+            "rank-bm25-c005",
+            "langchain-retrieval-c010",
+            "langchain-retrieval-c011"
+          ],
+          "latency_ms": 0.11409999999978027,
+          "evidence_calls": 1
+        },
+        "s30": {
+          "type": "single_hop",
+          "question": "Vector indexes 与词典匹配方法有什么不同？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c013",
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c002",
+            "langchain-retrieval-c011",
+            "langchain-retrieval-c010"
+          ],
+          "latency_ms": 0.11759999999958382,
+          "evidence_calls": 1
+        },
+        "s31": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的核心目标是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c001"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c012",
+            "milvus-rrf-ranker-c004",
+            "milvus-rrf-ranker-c002"
+          ],
+          "latency_ms": 0.11830000000009022,
+          "evidence_calls": 1
+        },
+        "s32": {
+          "type": "single_hop",
+          "question": "什么场景适合使用 RRF Ranker？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c002"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c012",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c014",
+            "milvus-rrf-ranker-c013"
+          ],
+          "latency_ms": 0.11410000000068976,
+          "evidence_calls": 1
+        },
+        "s33": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的工作流程有哪几步？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c004",
+            "milvus-rrf-ranker-c010"
+          ],
+          "latency_ms": 0.11380000000008295,
+          "evidence_calls": 1
+        },
+        "s34": {
+          "type": "single_hop",
+          "question": "RRF 的 k 参数是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c007",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c004",
+            "milvus-rrf-ranker-c009"
+          ],
+          "latency_ms": 0.11669999999958236,
+          "evidence_calls": 1
+        },
+        "s35": {
+          "type": "single_hop",
+          "question": "rank_bm25 如何初始化 BM25Okapi？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004"
+          ],
+          "ranked_chunk_ids": [
+            "rank-bm25-c004",
+            "rank-bm25-c003",
+            "rank-bm25-c001",
+            "rank-bm25-c005",
+            "rank-bm25-c002"
+          ],
+          "latency_ms": 0.11450000000058935,
+          "evidence_calls": 1
+        },
+        "m01": {
+          "type": "multi_hop",
+          "question": "DSH plugin 的加载入口和资源自动清理机制如何配合？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c001",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c005"
+          ],
+          "latency_ms": 0.11790000000019063,
+          "evidence_calls": 1
+        },
+        "m02": {
+          "type": "multi_hop",
+          "question": "从最小插件到注册一个 greet Tool 需要补哪些代码？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c003"
+          ],
+          "latency_ms": 0.1228000000000975,
+          "evidence_calls": 1
+        },
+        "m03": {
+          "type": "multi_hop",
+          "question": "在 DSH 中注册工具为什么必须先声明 tools 依赖？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c010",
+            "dsh-build-tool-c001"
+          ],
+          "latency_ms": 0.11260000000038417,
+          "evidence_calls": 1
+        },
+        "m04": {
+          "type": "multi_hop",
+          "question": "DSH 插件的 object form 与 class form 分别怎么组织？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c008",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.1147000000000844,
+          "evidence_calls": 1
+        },
+        "m05": {
+          "type": "multi_hop",
+          "question": "Transformer 的 attention 张量与 KV Cache 保存的键值有什么关系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "langchain-retrieval-c013"
+          ],
+          "latency_ms": 0.1364000000003216,
+          "evidence_calls": 1
+        },
+        "m06": {
+          "type": "multi_hop",
+          "question": "KV Cache 的内存结构如何影响默认动态扩容策略？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "latency_ms": 0.14419999999972788,
+          "evidence_calls": 1
+        },
+        "m07": {
+          "type": "multi_hop",
+          "question": "固定大小 cache 与 cache offloading 分别解决什么不同问题？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.11420000000089203,
+          "evidence_calls": 1
+        },
+        "m08": {
+          "type": "multi_hop",
+          "question": "QuantizedCache 与 EncoderDecoderCache 的设计目标有什么区别？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c009",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c007",
+            "transformers-kv-cache-c002"
+          ],
+          "latency_ms": 0.113999999999578,
+          "evidence_calls": 1
+        },
+        "m09": {
+          "type": "multi_hop",
+          "question": "迭代生成为什么同时需要 cache 管理和 crop 能力？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.11380000000008295,
+          "evidence_calls": 1
+        },
+        "m10": {
+          "type": "multi_hop",
+          "question": "Query rewriting 与 query decomposition 如何配合处理复杂问题？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c010"
+          ],
+          "latency_ms": 0.118399999999383,
+          "evidence_calls": 1
+        },
+        "m11": {
+          "type": "multi_hop",
+          "question": "Lexical search 与 vector indexes 的召回机制有什么互补性？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "rank-bm25-c001",
+            "langchain-retrieval-c011",
+            "rank-bm25-c003",
+            "langchain-retrieval-c010"
+          ],
+          "latency_ms": 0.11400000000048749,
+          "evidence_calls": 1
+        },
+        "m12": {
+          "type": "multi_hop",
+          "question": "RRF 的计算流程和 k 参数如何共同影响重排？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c006",
+            "milvus-rrf-ranker-c004"
+          ],
+          "latency_ms": 0.11269999999967695,
+          "evidence_calls": 1
+        },
+        "m13": {
+          "type": "multi_hop",
+          "question": "RRF 的显式算例与加权 search path 有什么关系？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c010"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c011",
+            "milvus-rrf-ranker-c007",
+            "milvus-rrf-ranker-c004",
+            "milvus-rrf-ranker-c006"
+          ],
+          "latency_ms": 0.11490000000048894,
+          "evidence_calls": 1
+        },
+        "m14": {
+          "type": "multi_hop",
+          "question": "rank_bm25 的查询流程如何体现 lexical retrieval 的基本思想？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004",
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "rank-bm25-c004",
+            "rank-bm25-c005",
+            "rank-bm25-c001",
+            "rank-bm25-c003",
+            "langchain-retrieval-c011"
+          ],
+          "latency_ms": 0.11419999999998254,
+          "evidence_calls": 1
+        },
+        "m15": {
+          "type": "multi_hop",
+          "question": "pytrec_eval 与 TREC 官方评测工具是什么关系，怎么安装？",
+          "gold_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c006",
+            "pytrec-eval-c007",
+            "pytrec-eval-c003",
+            "pytrec-eval-c004"
+          ],
+          "latency_ms": 0.11339999999927386,
+          "evidence_calls": 1
+        },
+        "u01": {
+          "type": "unanswerable",
+          "question": "知识库里有没有 dsh-evidence-agent 的商业收入、融资或定价数据？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c011",
+            "milvus-rrf-ranker-c001",
+            "langchain-retrieval-c010",
+            "milvus-rrf-ranker-c016",
+            "milvus-rrf-ranker-c015"
+          ],
+          "latency_ms": 0.11329999999998108,
+          "evidence_calls": 1
+        },
+        "u02": {
+          "type": "unanswerable",
+          "question": "本项目要求的最低 CUDA 版本是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "pytrec-eval-c002",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c006",
+            "rank-bm25-c002"
+          ],
+          "latency_ms": 0.113999999999578,
+          "evidence_calls": 1
+        },
+        "u03": {
+          "type": "unanswerable",
+          "question": "在 RTX 4090 上运行完整评测的平均延迟是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c005"
+          ],
+          "latency_ms": 0.11879999999928259,
+          "evidence_calls": 1
+        },
+        "u04": {
+          "type": "unanswerable",
+          "question": "维护这个项目的团队有多少人？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c005",
+            "transformers-kv-cache-c004",
+            "milvus-rrf-ranker-c016",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c004"
+          ],
+          "latency_ms": 0.11680000000069413,
+          "evidence_calls": 1
+        },
+        "u05": {
+          "type": "unanswerable",
+          "question": "知识库有没有列出 GPT-5 API 的价格？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "pytrec-eval-c007",
+            "langchain-retrieval-c010",
+            "langchain-retrieval-c011",
+            "pytrec-eval-c003",
+            "rank-bm25-c001"
+          ],
+          "latency_ms": 0.11300000000028376,
+          "evidence_calls": 1
+        },
+        "u06": {
+          "type": "unanswerable",
+          "question": "这个项目当前有哪些付费客户？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c016",
+            "dsh-build-tool-c004",
+            "langchain-retrieval-c010",
+            "langchain-retrieval-c011",
+            "milvus-rrf-ranker-c015"
+          ],
+          "latency_ms": 0.1125000000001819,
+          "evidence_calls": 1
+        },
+        "u07": {
+          "type": "unanswerable",
+          "question": "项目承诺的正式生产 SLA 可用性是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c010",
+            "transformers-kv-cache-c004",
+            "dsh-build-tool-c004",
+            "pytrec-eval-c007",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.11439999999947759,
+          "evidence_calls": 1
+        },
+        "u08": {
+          "type": "unanswerable",
+          "question": "v1.0 的正式发布日期是哪一天？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "rank-bm25-c002",
+            "dsh-first-plugin-c001",
+            "dsh-build-tool-c001",
+            "pytrec-eval-c002",
+            "dsh-build-tool-c004"
+          ],
+          "latency_ms": 0.11390000000028522,
+          "evidence_calls": 1
+        },
+        "u09": {
+          "type": "unanswerable",
+          "question": "知识库里是否包含 DeepSeek API Key？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c010",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c005",
+            "langchain-retrieval-c011"
+          ],
+          "latency_ms": 0.11279999999987922,
+          "evidence_calls": 1
+        },
+        "u10": {
+          "type": "unanswerable",
+          "question": "这个项目正式部署在哪些云厂商和区域？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c016",
+            "dsh-build-tool-c004",
+            "milvus-rrf-ranker-c015",
+            "langchain-retrieval-c010",
+            "dsh-first-plugin-c010"
+          ],
+          "latency_ms": 0.11339999999927386,
+          "evidence_calls": 1
+        }
+      }
+    },
+    "hybrid": {
+      "question_count": 60,
+      "error_count": 0,
+      "recall_at_k": 0.93,
+      "hit_rate_at_k": 1,
+      "mrr_at_k": 0.9433333333333332,
+      "unanswerable_evidence_return_rate": 1,
+      "average_search_ms": 0.29901499999996306,
+      "average_evidence_calls": 1,
+      "by_type": {
+        "single_hop": {
+          "count": 35,
+          "recall_at_k": 1,
+          "hit_rate_at_k": 1,
+          "mrr_at_k": 0.9523809523809522,
+          "evidence_return_rate": 1
+        },
+        "multi_hop": {
+          "count": 15,
+          "recall_at_k": 0.7666666666666667,
+          "hit_rate_at_k": 1,
+          "mrr_at_k": 0.9222222222222223,
+          "evidence_return_rate": 1
+        },
+        "unanswerable": {
+          "count": 10,
+          "recall_at_k": null,
+          "hit_rate_at_k": null,
+          "mrr_at_k": null,
+          "evidence_return_rate": 1
+        }
+      },
+      "per_question": {
+        "s01": {
+          "type": "single_hop",
+          "question": "DeepSeek Harness 中 plugin 本质上是什么？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c001",
+            "dsh-first-plugin-c009"
+          ],
+          "latency_ms": 0.3779999999997017,
+          "evidence_calls": 1
+        },
+        "s02": {
+          "type": "single_hop",
+          "question": "教程中的最小插件文件应该导出哪些内容？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.2808999999997468,
+          "evidence_calls": 1
+        },
+        "s03": {
+          "type": "single_hop",
+          "question": "本地插件如何在 cordis.yml 中注册？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c005"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c011"
+          ],
+          "latency_ms": 0.6284999999998035,
+          "evidence_calls": 1
+        },
+        "s04": {
+          "type": "single_hop",
+          "question": "为什么通过 ctx 注册的监听器和工具不需要手动清理？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c006",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010"
+          ],
+          "latency_ms": 0.3239999999996144,
+          "evidence_calls": 1
+        },
+        "s05": {
+          "type": "single_hop",
+          "question": "插件依赖 tools 服务时应该声明在哪里？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c010",
+            "dsh-build-tool-c002",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c009"
+          ],
+          "latency_ms": 0.24920000000020082,
+          "evidence_calls": 1
+        },
+        "s06": {
+          "type": "single_hop",
+          "question": "插件的 object form 和 function form 有什么表面差别？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c008",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.2673000000004322,
+          "evidence_calls": 1
+        },
+        "s07": {
+          "type": "single_hop",
+          "question": "DSH 工具定义中 defineTool 用来做什么？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c002",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c011",
+            "langchain-retrieval-c009",
+            "dsh-build-tool-c001"
+          ],
+          "latency_ms": 0.2466999999996915,
+          "evidence_calls": 1
+        },
+        "s08": {
+          "type": "single_hop",
+          "question": "教程要求怎样启动并在 Web UI 中调用新工具？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c003",
+            "dsh-build-tool-c001",
+            "dsh-first-plugin-c002",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.2977000000000771,
+          "evidence_calls": 1
+        },
+        "s09": {
+          "type": "single_hop",
+          "question": "DSH 工具教程之后推荐继续学习哪些主题？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c011",
+            "dsh-build-tool-c001",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c005"
+          ],
+          "latency_ms": 0.31129999999939173,
+          "evidence_calls": 1
+        },
+        "s10": {
+          "type": "single_hop",
+          "question": "scaled dot-product attention 的计算张量维度如何定义？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "latency_ms": 0.3103999999993903,
+          "evidence_calls": 1
+        },
+        "s11": {
+          "type": "single_hop",
+          "question": "基础 Cache 接口接收和返回什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.3081999999994878,
+          "evidence_calls": 1
+        },
+        "s12": {
+          "type": "single_hop",
+          "question": "KV Cache 在内存中如何组织？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.2644000000000233,
+          "evidence_calls": 1
+        },
+        "s13": {
+          "type": "single_hop",
+          "question": "为什么多轮对话需要 cache 已计算的 key 和 value？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c001"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c003"
+          ],
+          "latency_ms": 0.2638999999999214,
+          "evidence_calls": 1
+        },
+        "s14": {
+          "type": "single_hop",
+          "question": "Transformers 的默认 cache 类是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c014"
+          ],
+          "latency_ms": 0.2422999999998865,
+          "evidence_calls": 1
+        },
+        "s15": {
+          "type": "single_hop",
+          "question": "固定大小 cache 为什么有利于 JIT 优化？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "latency_ms": 0.23869999999988067,
+          "evidence_calls": 1
+        },
+        "s16": {
+          "type": "single_hop",
+          "question": "为什么有些编译后端需要把生成张量保留在 CPU？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c005"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c005",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.27480000000014115,
+          "evidence_calls": 1
+        },
+        "s17": {
+          "type": "single_hop",
+          "question": "长上下文生成时 KV cache 为什么会成为内存瓶颈？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c007"
+          ],
+          "latency_ms": 0.29650000000037835,
+          "evidence_calls": 1
+        },
+        "s18": {
+          "type": "single_hop",
+          "question": "QuantizedCache 通过什么方式降低内存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.259900000000016,
+          "evidence_calls": 1
+        },
+        "s19": {
+          "type": "single_hop",
+          "question": "EncoderDecoderCache 管理哪些缓存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.23030000000017026,
+          "evidence_calls": 1
+        },
+        "s20": {
+          "type": "single_hop",
+          "question": "哪些模型可能需要专用 cache 实现？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c011"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c011",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.3245999999999185,
+          "evidence_calls": 1
+        },
+        "s21": {
+          "type": "single_hop",
+          "question": "迭代生成中的 cache 与普通生成有什么联系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003"
+          ],
+          "latency_ms": 0.40279999999984284,
+          "evidence_calls": 1
+        },
+        "s22": {
+          "type": "single_hop",
+          "question": "Cache.crop 的用途是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.327900000000227,
+          "evidence_calls": 1
+        },
+        "s23": {
+          "type": "single_hop",
+          "question": "Prefix caching 如何复用 KV cache？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c014"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c014",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "latency_ms": 0.32449999999971624,
+          "evidence_calls": 1
+        },
+        "s24": {
+          "type": "single_hop",
+          "question": "Retrieval 系统里的 query analysis 包含哪些阶段？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c003",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c006"
+          ],
+          "latency_ms": 0.28849999999965803,
+          "evidence_calls": 1
+        },
+        "s25": {
+          "type": "single_hop",
+          "question": "为什么复杂或表述不好的查询需要 query rewriting？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c012"
+          ],
+          "latency_ms": 0.34569999999985157,
+          "evidence_calls": 1
+        },
+        "s26": {
+          "type": "single_hop",
+          "question": "LangChain 文档列出了哪些 query rewriting 技术？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c006"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c005",
+            "transformers-kv-cache-strategies-c013",
+            "langchain-retrieval-c004"
+          ],
+          "latency_ms": 0.2973999999994703,
+          "evidence_calls": 1
+        },
+        "s27": {
+          "type": "single_hop",
+          "question": "怎样用提示词做 query decomposition？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c004"
+          ],
+          "latency_ms": 0.35609999999996944,
+          "evidence_calls": 1
+        },
+        "s28": {
+          "type": "single_hop",
+          "question": "Query construction 在检索中做什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c008"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c016",
+            "langchain-retrieval-c002"
+          ],
+          "latency_ms": 0.4140000000006694,
+          "evidence_calls": 1
+        },
+        "s29": {
+          "type": "single_hop",
+          "question": "Lexical retrieval 的基本匹配思路是什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "rank-bm25-c005",
+            "rank-bm25-c001",
+            "rank-bm25-c004",
+            "langchain-retrieval-c002"
+          ],
+          "latency_ms": 0.336699999999837,
+          "evidence_calls": 1
+        },
+        "s30": {
+          "type": "single_hop",
+          "question": "Vector indexes 与词典匹配方法有什么不同？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c013",
+            "langchain-retrieval-c002",
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c004"
+          ],
+          "latency_ms": 0.2989000000006854,
+          "evidence_calls": 1
+        },
+        "s31": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的核心目标是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c001"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c014",
+            "milvus-rrf-ranker-c017"
+          ],
+          "latency_ms": 0.29899999999997817,
+          "evidence_calls": 1
+        },
+        "s32": {
+          "type": "single_hop",
+          "question": "什么场景适合使用 RRF Ranker？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c002"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c012",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c013",
+            "milvus-rrf-ranker-c014"
+          ],
+          "latency_ms": 0.3186999999998079,
+          "evidence_calls": 1
+        },
+        "s33": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的工作流程有哪几步？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c004"
+          ],
+          "latency_ms": 0.3276000000005297,
+          "evidence_calls": 1
+        },
+        "s34": {
+          "type": "single_hop",
+          "question": "RRF 的 k 参数是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c007",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c009",
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c010"
+          ],
+          "latency_ms": 0.26270000000022264,
+          "evidence_calls": 1
+        },
+        "s35": {
+          "type": "single_hop",
+          "question": "rank_bm25 如何初始化 BM25Okapi？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004"
+          ],
+          "ranked_chunk_ids": [
+            "rank-bm25-c004",
+            "rank-bm25-c005",
+            "rank-bm25-c001",
+            "rank-bm25-c003",
+            "rank-bm25-c002"
+          ],
+          "latency_ms": 0.29470000000037544,
+          "evidence_calls": 1
+        },
+        "m01": {
+          "type": "multi_hop",
+          "question": "DSH plugin 的加载入口和资源自动清理机制如何配合？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c001",
+            "dsh-first-plugin-c009"
+          ],
+          "latency_ms": 0.28249999999934516,
+          "evidence_calls": 1
+        },
+        "m02": {
+          "type": "multi_hop",
+          "question": "从最小插件到注册一个 greet Tool 需要补哪些代码？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.26789999999982683,
+          "evidence_calls": 1
+        },
+        "m03": {
+          "type": "multi_hop",
+          "question": "在 DSH 中注册工具为什么必须先声明 tools 依赖？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c010",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c009"
+          ],
+          "latency_ms": 0.24430000000029395,
+          "evidence_calls": 1
+        },
+        "m04": {
+          "type": "multi_hop",
+          "question": "DSH 插件的 object form 与 class form 分别怎么组织？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c008",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.23829999999998108,
+          "evidence_calls": 1
+        },
+        "m05": {
+          "type": "multi_hop",
+          "question": "Transformer 的 attention 张量与 KV Cache 保存的键值有什么关系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "latency_ms": 0.31849999999940337,
+          "evidence_calls": 1
+        },
+        "m06": {
+          "type": "multi_hop",
+          "question": "KV Cache 的内存结构如何影响默认动态扩容策略？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "latency_ms": 0.2772000000004482,
+          "evidence_calls": 1
+        },
+        "m07": {
+          "type": "multi_hop",
+          "question": "固定大小 cache 与 cache offloading 分别解决什么不同问题？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.25419999999940046,
+          "evidence_calls": 1
+        },
+        "m08": {
+          "type": "multi_hop",
+          "question": "QuantizedCache 与 EncoderDecoderCache 的设计目标有什么区别？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c007"
+          ],
+          "latency_ms": 0.2559000000001106,
+          "evidence_calls": 1
+        },
+        "m09": {
+          "type": "multi_hop",
+          "question": "迭代生成为什么同时需要 cache 管理和 crop 能力？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.2714000000005399,
+          "evidence_calls": 1
+        },
+        "m10": {
+          "type": "multi_hop",
+          "question": "Query rewriting 与 query decomposition 如何配合处理复杂问题？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c007"
+          ],
+          "latency_ms": 0.2897999999995591,
+          "evidence_calls": 1
+        },
+        "m11": {
+          "type": "multi_hop",
+          "question": "Lexical search 与 vector indexes 的召回机制有什么互补性？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "rank-bm25-c001",
+            "rank-bm25-c005",
+            "rank-bm25-c004",
+            "rank-bm25-c002"
+          ],
+          "latency_ms": 0.2807999999995445,
+          "evidence_calls": 1
+        },
+        "m12": {
+          "type": "multi_hop",
+          "question": "RRF 的计算流程和 k 参数如何共同影响重排？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c006",
+            "milvus-rrf-ranker-c010"
+          ],
+          "latency_ms": 0.2588999999998123,
+          "evidence_calls": 1
+        },
+        "m13": {
+          "type": "multi_hop",
+          "question": "RRF 的显式算例与加权 search path 有什么关系？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c010"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c011",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c007"
+          ],
+          "latency_ms": 0.31669999999940046,
+          "evidence_calls": 1
+        },
+        "m14": {
+          "type": "multi_hop",
+          "question": "rank_bm25 的查询流程如何体现 lexical retrieval 的基本思想？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004",
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "rank-bm25-c004",
+            "rank-bm25-c005",
+            "rank-bm25-c003",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c012"
+          ],
+          "latency_ms": 0.6791000000002896,
+          "evidence_calls": 1
+        },
+        "m15": {
+          "type": "multi_hop",
+          "question": "pytrec_eval 与 TREC 官方评测工具是什么关系，怎么安装？",
+          "gold_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c006",
+            "pytrec-eval-c007",
+            "pytrec-eval-c003",
+            "pytrec-eval-c004"
+          ],
+          "latency_ms": 0.34280000000035216,
+          "evidence_calls": 1
+        },
+        "u01": {
+          "type": "unanswerable",
+          "question": "知识库里有没有 dsh-evidence-agent 的商业收入、融资或定价数据？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c002",
+            "langchain-retrieval-c011",
+            "transformers-kv-cache-strategies-c014",
+            "milvus-rrf-ranker-c001"
+          ],
+          "latency_ms": 0.29140000000006694,
+          "evidence_calls": 1
+        },
+        "u02": {
+          "type": "unanswerable",
+          "question": "本项目要求的最低 CUDA 版本是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "rank-bm25-c002",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c007",
+            "transformers-kv-cache-strategies-c008",
+            "pytrec-eval-c002"
+          ],
+          "latency_ms": 0.2415000000000873,
+          "evidence_calls": 1
+        },
+        "u03": {
+          "type": "unanswerable",
+          "question": "在 RTX 4090 上运行完整评测的平均延迟是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c003",
+            "pytrec-eval-c004",
+            "pytrec-eval-c001",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.27990000000045256,
+          "evidence_calls": 1
+        },
+        "u04": {
+          "type": "unanswerable",
+          "question": "维护这个项目的团队有多少人？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c002",
+            "transformers-kv-cache-strategies-c005",
+            "transformers-kv-cache-c004",
+            "milvus-rrf-ranker-c016",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.2136000000000422,
+          "evidence_calls": 1
+        },
+        "u05": {
+          "type": "unanswerable",
+          "question": "知识库有没有列出 GPT-5 API 的价格？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "milvus-rrf-ranker-c004",
+            "milvus-rrf-ranker-c011",
+            "milvus-rrf-ranker-c012",
+            "dsh-first-plugin-c011"
+          ],
+          "latency_ms": 0.23799999999937427,
+          "evidence_calls": 1
+        },
+        "u06": {
+          "type": "unanswerable",
+          "question": "这个项目当前有哪些付费客户？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c008",
+            "langchain-retrieval-c015",
+            "rank-bm25-c004",
+            "transformers-kv-cache-c004",
+            "milvus-rrf-ranker-c012"
+          ],
+          "latency_ms": 0.24139999999988504,
+          "evidence_calls": 1
+        },
+        "u07": {
+          "type": "unanswerable",
+          "question": "项目承诺的正式生产 SLA 可用性是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c010",
+            "langchain-retrieval-c010",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.23250000000007276,
+          "evidence_calls": 1
+        },
+        "u08": {
+          "type": "unanswerable",
+          "question": "v1.0 的正式发布日期是哪一天？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c011",
+            "milvus-rrf-ranker-c012",
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c003"
+          ],
+          "latency_ms": 0.264299999999821,
+          "evidence_calls": 1
+        },
+        "u09": {
+          "type": "unanswerable",
+          "question": "知识库里是否包含 DeepSeek API Key？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.24220000000059372,
+          "evidence_calls": 1
+        },
+        "u10": {
+          "type": "unanswerable",
+          "question": "这个项目正式部署在哪些云厂商和区域？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c004",
+            "milvus-rrf-ranker-c016",
+            "rank-bm25-c001",
+            "milvus-rrf-ranker-c015",
+            "langchain-retrieval-c010"
+          ],
+          "latency_ms": 0.2250000000003638,
+          "evidence_calls": 1
+        }
+      }
+    },
+    "multi_query": {
+      "question_count": 60,
+      "error_count": 0,
+      "recall_at_k": 0.94,
+      "hit_rate_at_k": 0.98,
+      "mrr_at_k": 0.9306666666666666,
+      "unanswerable_evidence_return_rate": 1,
+      "average_search_ms": 0.39586999999998324,
+      "average_evidence_calls": 1.25,
+      "by_type": {
+        "single_hop": {
+          "count": 35,
+          "recall_at_k": 1,
+          "hit_rate_at_k": 1,
+          "mrr_at_k": 0.9523809523809522,
+          "evidence_return_rate": 1
+        },
+        "multi_hop": {
+          "count": 15,
+          "recall_at_k": 0.8,
+          "hit_rate_at_k": 0.9333333333333333,
+          "mrr_at_k": 0.88,
+          "evidence_return_rate": 1
+        },
+        "unanswerable": {
+          "count": 10,
+          "recall_at_k": null,
+          "hit_rate_at_k": null,
+          "mrr_at_k": null,
+          "evidence_return_rate": 1
+        }
+      },
+      "per_question": {
+        "s01": {
+          "type": "single_hop",
+          "question": "DeepSeek Harness 中 plugin 本质上是什么？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c001",
+            "dsh-first-plugin-c009"
+          ],
+          "latency_ms": 0.4654000000000451,
+          "evidence_calls": 1
+        },
+        "s02": {
+          "type": "single_hop",
+          "question": "教程中的最小插件文件应该导出哪些内容？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.3113000000003012,
+          "evidence_calls": 1
+        },
+        "s03": {
+          "type": "single_hop",
+          "question": "本地插件如何在 cordis.yml 中注册？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c005"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c011"
+          ],
+          "latency_ms": 0.3095999999995911,
+          "evidence_calls": 1
+        },
+        "s04": {
+          "type": "single_hop",
+          "question": "为什么通过 ctx 注册的监听器和工具不需要手动清理？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c006",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010"
+          ],
+          "latency_ms": 0.2878000000000611,
+          "evidence_calls": 1
+        },
+        "s05": {
+          "type": "single_hop",
+          "question": "插件依赖 tools 服务时应该声明在哪里？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c010",
+            "dsh-build-tool-c002",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c009"
+          ],
+          "latency_ms": 0.27229999999963184,
+          "evidence_calls": 1
+        },
+        "s06": {
+          "type": "single_hop",
+          "question": "插件的 object form 和 function form 有什么表面差别？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c008",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.29399999999986903,
+          "evidence_calls": 1
+        },
+        "s07": {
+          "type": "single_hop",
+          "question": "DSH 工具定义中 defineTool 用来做什么？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c002",
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c011",
+            "langchain-retrieval-c009",
+            "dsh-build-tool-c001"
+          ],
+          "latency_ms": 0.2723999999998341,
+          "evidence_calls": 1
+        },
+        "s08": {
+          "type": "single_hop",
+          "question": "教程要求怎样启动并在 Web UI 中调用新工具？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c003"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c003",
+            "dsh-build-tool-c001",
+            "dsh-first-plugin-c002",
+            "dsh-build-tool-c002"
+          ],
+          "latency_ms": 0.3010999999996784,
+          "evidence_calls": 1
+        },
+        "s09": {
+          "type": "single_hop",
+          "question": "DSH 工具教程之后推荐继续学习哪些主题？",
+          "gold_chunk_ids": [
+            "dsh-build-tool-c004"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c011",
+            "dsh-build-tool-c001",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c005"
+          ],
+          "latency_ms": 0.31970000000001164,
+          "evidence_calls": 1
+        },
+        "s10": {
+          "type": "single_hop",
+          "question": "scaled dot-product attention 的计算张量维度如何定义？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "latency_ms": 0.3301000000001295,
+          "evidence_calls": 1
+        },
+        "s11": {
+          "type": "single_hop",
+          "question": "基础 Cache 接口接收和返回什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.3598999999994703,
+          "evidence_calls": 1
+        },
+        "s12": {
+          "type": "single_hop",
+          "question": "KV Cache 在内存中如何组织？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.30899999999928696,
+          "evidence_calls": 1
+        },
+        "s13": {
+          "type": "single_hop",
+          "question": "为什么多轮对话需要 cache 已计算的 key 和 value？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c001"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c003"
+          ],
+          "latency_ms": 0.3419999999996435,
+          "evidence_calls": 1
+        },
+        "s14": {
+          "type": "single_hop",
+          "question": "Transformers 的默认 cache 类是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c014"
+          ],
+          "latency_ms": 0.3926999999994223,
+          "evidence_calls": 1
+        },
+        "s15": {
+          "type": "single_hop",
+          "question": "固定大小 cache 为什么有利于 JIT 优化？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "latency_ms": 0.5324000000000524,
+          "evidence_calls": 1
+        },
+        "s16": {
+          "type": "single_hop",
+          "question": "为什么有些编译后端需要把生成张量保留在 CPU？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c005"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c005",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.4466999999995096,
+          "evidence_calls": 1
+        },
+        "s17": {
+          "type": "single_hop",
+          "question": "长上下文生成时 KV cache 为什么会成为内存瓶颈？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c007"
+          ],
+          "latency_ms": 0.4128999999993539,
+          "evidence_calls": 1
+        },
+        "s18": {
+          "type": "single_hop",
+          "question": "QuantizedCache 通过什么方式降低内存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.3043999999999869,
+          "evidence_calls": 1
+        },
+        "s19": {
+          "type": "single_hop",
+          "question": "EncoderDecoderCache 管理哪些缓存？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-strategies-c003"
+          ],
+          "latency_ms": 0.27510000000074797,
+          "evidence_calls": 1
+        },
+        "s20": {
+          "type": "single_hop",
+          "question": "哪些模型可能需要专用 cache 实现？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c011"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c011",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c010",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.30680000000029395,
+          "evidence_calls": 1
+        },
+        "s21": {
+          "type": "single_hop",
+          "question": "迭代生成中的 cache 与普通生成有什么联系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003"
+          ],
+          "latency_ms": 0.3170000000000073,
+          "evidence_calls": 1
+        },
+        "s22": {
+          "type": "single_hop",
+          "question": "Cache.crop 的用途是什么？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c004",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.35759999999936554,
+          "evidence_calls": 1
+        },
+        "s23": {
+          "type": "single_hop",
+          "question": "Prefix caching 如何复用 KV cache？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c014"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c014",
+            "transformers-kv-cache-c001",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "latency_ms": 0.3437999999996464,
+          "evidence_calls": 1
+        },
+        "s24": {
+          "type": "single_hop",
+          "question": "Retrieval 系统里的 query analysis 包含哪些阶段？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c003",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c006"
+          ],
+          "latency_ms": 0.36670000000049185,
+          "evidence_calls": 1
+        },
+        "s25": {
+          "type": "single_hop",
+          "question": "为什么复杂或表述不好的查询需要 query rewriting？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c012"
+          ],
+          "latency_ms": 0.3379000000004453,
+          "evidence_calls": 1
+        },
+        "s26": {
+          "type": "single_hop",
+          "question": "LangChain 文档列出了哪些 query rewriting 技术？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c006"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c005",
+            "transformers-kv-cache-strategies-c013",
+            "langchain-retrieval-c004"
+          ],
+          "latency_ms": 0.3106000000007043,
+          "evidence_calls": 1
+        },
+        "s27": {
+          "type": "single_hop",
+          "question": "怎样用提示词做 query decomposition？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c004"
+          ],
+          "latency_ms": 0.31739999999990687,
+          "evidence_calls": 1
+        },
+        "s28": {
+          "type": "single_hop",
+          "question": "Query construction 在检索中做什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c008"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c008",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c009",
+            "langchain-retrieval-c016",
+            "langchain-retrieval-c002"
+          ],
+          "latency_ms": 0.28210000000035507,
+          "evidence_calls": 1
+        },
+        "s29": {
+          "type": "single_hop",
+          "question": "Lexical retrieval 的基本匹配思路是什么？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "rank-bm25-c005",
+            "rank-bm25-c001",
+            "rank-bm25-c004",
+            "langchain-retrieval-c002"
+          ],
+          "latency_ms": 0.7051999999994223,
+          "evidence_calls": 1
+        },
+        "s30": {
+          "type": "single_hop",
+          "question": "Vector indexes 与词典匹配方法有什么不同？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c013",
+            "langchain-retrieval-c002",
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c004"
+          ],
+          "latency_ms": 0.35710000000017317,
+          "evidence_calls": 1
+        },
+        "s31": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的核心目标是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c001"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c014",
+            "milvus-rrf-ranker-c017"
+          ],
+          "latency_ms": 0.31899999999950523,
+          "evidence_calls": 1
+        },
+        "s32": {
+          "type": "single_hop",
+          "question": "什么场景适合使用 RRF Ranker？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c002"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c002",
+            "milvus-rrf-ranker-c012",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c013",
+            "milvus-rrf-ranker-c014"
+          ],
+          "latency_ms": 0.31630000000041036,
+          "evidence_calls": 1
+        },
+        "s33": {
+          "type": "single_hop",
+          "question": "RRF Ranker 的工作流程有哪几步？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c004"
+          ],
+          "latency_ms": 0.2800999999999476,
+          "evidence_calls": 1
+        },
+        "s34": {
+          "type": "single_hop",
+          "question": "RRF 的 k 参数是什么？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c007",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c009",
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c010"
+          ],
+          "latency_ms": 0.25970000000052096,
+          "evidence_calls": 1
+        },
+        "s35": {
+          "type": "single_hop",
+          "question": "rank_bm25 如何初始化 BM25Okapi？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004"
+          ],
+          "ranked_chunk_ids": [
+            "rank-bm25-c004",
+            "rank-bm25-c005",
+            "rank-bm25-c001",
+            "rank-bm25-c003",
+            "rank-bm25-c002"
+          ],
+          "latency_ms": 0.2879000000002634,
+          "evidence_calls": 1
+        },
+        "m01": {
+          "type": "multi_hop",
+          "question": "DSH plugin 的加载入口和资源自动清理机制如何配合？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c003",
+            "dsh-first-plugin-c006"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c003"
+          ],
+          "latency_ms": 0.5706000000000131,
+          "evidence_calls": 2
+        },
+        "m02": {
+          "type": "multi_hop",
+          "question": "从最小插件到注册一个 greet Tool 需要补哪些代码？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c004",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c009",
+            "dsh-build-tool-c001"
+          ],
+          "latency_ms": 0.5958000000000538,
+          "evidence_calls": 2
+        },
+        "m03": {
+          "type": "multi_hop",
+          "question": "在 DSH 中注册工具为什么必须先声明 tools 依赖？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c004"
+          ],
+          "latency_ms": 0.45650000000023283,
+          "evidence_calls": 2
+        },
+        "m04": {
+          "type": "multi_hop",
+          "question": "DSH 插件的 object form 与 class form 分别怎么组织？",
+          "gold_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c010"
+          ],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c010",
+            "dsh-first-plugin-c009",
+            "dsh-first-plugin-c007",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c008"
+          ],
+          "latency_ms": 0.49760000000060245,
+          "evidence_calls": 2
+        },
+        "m05": {
+          "type": "multi_hop",
+          "question": "Transformer 的 attention 张量与 KV Cache 保存的键值有什么关系？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-c003"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-strategies-c008"
+          ],
+          "latency_ms": 0.6096000000006825,
+          "evidence_calls": 2
+        },
+        "m06": {
+          "type": "multi_hop",
+          "question": "KV Cache 的内存结构如何影响默认动态扩容策略？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c002"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c004",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-c002"
+          ],
+          "latency_ms": 0.5205999999998312,
+          "evidence_calls": 2
+        },
+        "m07": {
+          "type": "multi_hop",
+          "question": "固定大小 cache 与 cache offloading 分别解决什么不同问题？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c006"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "latency_ms": 0.5027000000000044,
+          "evidence_calls": 2
+        },
+        "m08": {
+          "type": "multi_hop",
+          "question": "QuantizedCache 与 EncoderDecoderCache 的设计目标有什么区别？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c010"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-strategies-c003",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "latency_ms": 0.48149999999986903,
+          "evidence_calls": 2
+        },
+        "m09": {
+          "type": "multi_hop",
+          "question": "迭代生成为什么同时需要 cache 管理和 crop 能力？",
+          "gold_chunk_ids": [
+            "transformers-kv-cache-strategies-c012",
+            "transformers-kv-cache-strategies-c013"
+          ],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c013",
+            "transformers-kv-cache-strategies-c002",
+            "transformers-kv-cache-c003",
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c001"
+          ],
+          "latency_ms": 0.5210999999999331,
+          "evidence_calls": 2
+        },
+        "m10": {
+          "type": "multi_hop",
+          "question": "Query rewriting 与 query decomposition 如何配合处理复杂问题？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c007"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c005",
+            "langchain-retrieval-c006",
+            "langchain-retrieval-c007",
+            "langchain-retrieval-c004",
+            "langchain-retrieval-c008"
+          ],
+          "latency_ms": 0.5361000000002605,
+          "evidence_calls": 2
+        },
+        "m11": {
+          "type": "multi_hop",
+          "question": "Lexical search 与 vector indexes 的召回机制有什么互补性？",
+          "gold_chunk_ids": [
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c013"
+          ],
+          "ranked_chunk_ids": [
+            "langchain-retrieval-c012",
+            "langchain-retrieval-c013",
+            "milvus-rrf-ranker-c016",
+            "milvus-rrf-ranker-c017",
+            "milvus-rrf-ranker-c015"
+          ],
+          "latency_ms": 0.531699999999546,
+          "evidence_calls": 2
+        },
+        "m12": {
+          "type": "multi_hop",
+          "question": "RRF 的计算流程和 k 参数如何共同影响重排？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c007"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c001",
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c004"
+          ],
+          "latency_ms": 0.5316000000002532,
+          "evidence_calls": 2
+        },
+        "m13": {
+          "type": "multi_hop",
+          "question": "RRF 的显式算例与加权 search path 有什么关系？",
+          "gold_chunk_ids": [
+            "milvus-rrf-ranker-c005",
+            "milvus-rrf-ranker-c010"
+          ],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c010",
+            "milvus-rrf-ranker-c011",
+            "milvus-rrf-ranker-c003",
+            "milvus-rrf-ranker-c007",
+            "milvus-rrf-ranker-c012"
+          ],
+          "latency_ms": 0.5408999999999651,
+          "evidence_calls": 2
+        },
+        "m14": {
+          "type": "multi_hop",
+          "question": "rank_bm25 的查询流程如何体现 lexical retrieval 的基本思想？",
+          "gold_chunk_ids": [
+            "rank-bm25-c004",
+            "langchain-retrieval-c012"
+          ],
+          "ranked_chunk_ids": [
+            "rank-bm25-c004",
+            "langchain-retrieval-c012",
+            "rank-bm25-c001",
+            "rank-bm25-c005",
+            "langchain-retrieval-c010"
+          ],
+          "latency_ms": 0.5320000000001528,
+          "evidence_calls": 2
+        },
+        "m15": {
+          "type": "multi_hop",
+          "question": "pytrec_eval 与 TREC 官方评测工具是什么关系，怎么安装？",
+          "gold_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c003"
+          ],
+          "ranked_chunk_ids": [
+            "pytrec-eval-c001",
+            "pytrec-eval-c003",
+            "pytrec-eval-c007",
+            "pytrec-eval-c006",
+            "pytrec-eval-c004"
+          ],
+          "latency_ms": 0.7048000000004322,
+          "evidence_calls": 2
+        },
+        "u01": {
+          "type": "unanswerable",
+          "question": "知识库里有没有 dsh-evidence-agent 的商业收入、融资或定价数据？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c001",
+            "transformers-kv-cache-c002",
+            "langchain-retrieval-c011",
+            "transformers-kv-cache-strategies-c014",
+            "milvus-rrf-ranker-c001"
+          ],
+          "latency_ms": 0.32929999999942083,
+          "evidence_calls": 1
+        },
+        "u02": {
+          "type": "unanswerable",
+          "question": "本项目要求的最低 CUDA 版本是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "rank-bm25-c002",
+            "transformers-kv-cache-strategies-c006",
+            "transformers-kv-cache-strategies-c007",
+            "transformers-kv-cache-strategies-c008",
+            "pytrec-eval-c002"
+          ],
+          "latency_ms": 0.2915000000002692,
+          "evidence_calls": 1
+        },
+        "u03": {
+          "type": "unanswerable",
+          "question": "在 RTX 4090 上运行完整评测的平均延迟是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-strategies-c008",
+            "transformers-kv-cache-strategies-c003",
+            "pytrec-eval-c004",
+            "pytrec-eval-c001",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.3948999999993248,
+          "evidence_calls": 1
+        },
+        "u04": {
+          "type": "unanswerable",
+          "question": "维护这个项目的团队有多少人？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c002",
+            "transformers-kv-cache-strategies-c005",
+            "transformers-kv-cache-c004",
+            "milvus-rrf-ranker-c016",
+            "transformers-kv-cache-strategies-c001"
+          ],
+          "latency_ms": 0.7903999999998632,
+          "evidence_calls": 1
+        },
+        "u05": {
+          "type": "unanswerable",
+          "question": "知识库有没有列出 GPT-5 API 的价格？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "transformers-kv-cache-c002",
+            "milvus-rrf-ranker-c004",
+            "milvus-rrf-ranker-c011",
+            "milvus-rrf-ranker-c012",
+            "dsh-first-plugin-c011"
+          ],
+          "latency_ms": 0.34650000000056025,
+          "evidence_calls": 1
+        },
+        "u06": {
+          "type": "unanswerable",
+          "question": "这个项目当前有哪些付费客户？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c008",
+            "langchain-retrieval-c015",
+            "rank-bm25-c004",
+            "transformers-kv-cache-c004",
+            "milvus-rrf-ranker-c012"
+          ],
+          "latency_ms": 0.30429999999978463,
+          "evidence_calls": 1
+        },
+        "u07": {
+          "type": "unanswerable",
+          "question": "项目承诺的正式生产 SLA 可用性是多少？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c004",
+            "dsh-first-plugin-c007",
+            "dsh-first-plugin-c010",
+            "langchain-retrieval-c010",
+            "transformers-kv-cache-c004"
+          ],
+          "latency_ms": 0.29470000000037544,
+          "evidence_calls": 1
+        },
+        "u08": {
+          "type": "unanswerable",
+          "question": "v1.0 的正式发布日期是哪一天？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "milvus-rrf-ranker-c008",
+            "milvus-rrf-ranker-c011",
+            "milvus-rrf-ranker-c012",
+            "dsh-first-plugin-c005",
+            "dsh-build-tool-c003"
+          ],
+          "latency_ms": 0.31599999999980355,
+          "evidence_calls": 1
+        },
+        "u09": {
+          "type": "unanswerable",
+          "question": "知识库里是否包含 DeepSeek API Key？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-first-plugin-c009",
+            "dsh-build-tool-c002",
+            "dsh-first-plugin-c005",
+            "dsh-first-plugin-c004",
+            "dsh-first-plugin-c007"
+          ],
+          "latency_ms": 0.28960000000006403,
+          "evidence_calls": 1
+        },
+        "u10": {
+          "type": "unanswerable",
+          "question": "这个项目正式部署在哪些云厂商和区域？",
+          "gold_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "dsh-build-tool-c004",
+            "milvus-rrf-ranker-c016",
+            "rank-bm25-c001",
+            "milvus-rrf-ranker-c015",
+            "langchain-retrieval-c010"
+          ],
+          "latency_ms": 0.25789999999960855,
+          "evidence_calls": 1
+        }
+      }
+    }
+  },
+  "notes": [
+    "> This report evaluates retrieval only. Answer correctness, faithfulness, citation usefulness, and refusal quality are not measured here.",
+    "> `hybrid_raw_question` uses the user-facing question unchanged. The other strategies use the dataset retrieval queries, which approximate a rewrite step.",
+    "> `multi_query` uses the authored subqueries in the dataset and is an Agentic RAG retrieval proxy, not a live LLM planning run.",
+    "> `average_search_ms` measures retrieval work after query embeddings are prepared; it excludes embedding API latency.",
+    "> The unanswerable column is evidence-return rate, not refusal rate. A generator can still correctly abstain when candidates are returned."
+  ]
+}

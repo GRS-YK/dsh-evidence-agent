@@ -10,6 +10,7 @@
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { defineTool, ToolArgsError } from '@deepseek-ai/dsh-tools'
+import { EvidenceCallBudget } from './lib/evidence-call-budget.js'
 import { registerEvidenceTools } from './lib/evidence-plugin.js'
 import { EvidenceService } from './lib/evidence-service.js'
 
@@ -27,13 +28,18 @@ const REPO_ROOT = fileURLToPath(new URL('.', import.meta.url))
  */
 export function apply(ctx, config) {
   const disposers = []
+  const budget = new EvidenceCallBudget({
+    maxCalls: config?.maxToolCalls,
+  })
 
   const skills = ctx.get('skills')
   if (skills && typeof skills.register === 'function') {
     try {
       disposers.push(skills.register({
         name: 'dsh-evidence-agent',
-        description: 'Search and read source-backed evidence from the project knowledge base.',
+        description:
+          'MUST load before calling any dsh-evidence-agent_kb_* tool. '
+          + 'Defines retrieval routing, citation, refusal, and the four-call evidence budget.',
         content: readFileSync(SKILL_FILE, 'utf8'),
         source: 'runtime',
         provider: 'dsh-evidence-agent',
@@ -41,6 +47,12 @@ export function apply(ctx, config) {
     } catch (error) {
       ctx.logger?.warn?.('dsh-evidence-agent: failed to register skill: ' + String(error))
     }
+  }
+
+  if (typeof ctx.on === 'function') {
+    disposers.push(ctx.on('session/event', (session, event) => {
+      if (event?.type === 'turn/start') budget.beginTurn(session.id)
+    }))
   }
 
   const service = new EvidenceService({
@@ -53,6 +65,7 @@ export function apply(ctx, config) {
     defineTool,
     ToolArgsError,
     service,
+    budget,
   }))
 
   return () => {
