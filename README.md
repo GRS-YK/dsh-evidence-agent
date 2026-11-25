@@ -105,3 +105,46 @@ npm run embeddings:rebuild
 
 - 官方插件教程与踩坑记录:https://github.com/ciceroyang/dsh-report-studio/blob/main/docs/tutorial-zh.md
 - 完整实例:https://github.com/ciceroyang/dsh-report-studio
+
+## BM25 关键词索引
+
+BM25 索引使用英文单词和中文单字/相邻双字 n-gram，不依赖额外的分词服务。
+索引文件 `knowledge/index/bm25.json` 由当前 chunk 确定性生成，不提交到 Git。
+
+建立索引：
+
+```powershell
+npm.cmd run bm25:build
+```
+
+预期输出：
+
+```text
+Wrote knowledge/index/bm25.json (78 chunks, ... terms)
+```
+
+检查索引是否与当前文档一致：
+
+```powershell
+npm.cmd run bm25:check
+```
+
+预期输出：
+
+```text
+BM25 index is up to date (78 chunks)
+```
+
+查询前 5 个结果：
+
+```powershell
+npm.cmd run bm25:search -- "reciprocal rank fusion"
+```
+
+限制返回条数：
+
+```powershell
+npm.cmd run bm25:search -- "BM25Okapi" --top-k 3
+```
+
+BM25 只做关键词匹配，不会翻译中英文。当前资料以英文为主，因此中文查询能否命中取决于语料中是否真的出现相应中文词项；跨语言语义召回将在 Dense + BM25 + RRF 阶段完成。

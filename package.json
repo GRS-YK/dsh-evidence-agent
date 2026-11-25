@@ -22,7 +22,10 @@
     "knowledge:manifest:check": "node scripts/build-knowledge-manifest.js --check",
     "embeddings:build": "node scripts/build-embedding-index.js",
     "embeddings:check": "node scripts/build-embedding-index.js --check",
-    "embeddings:rebuild": "node scripts/build-embedding-index.js --force"
+    "embeddings:rebuild": "node scripts/build-embedding-index.js --force",
+    "bm25:build": "node scripts/build-bm25-index.js",
+    "bm25:check": "node scripts/build-bm25-index.js --check",
+    "bm25:search": "node scripts/search-bm25.js"
   },
   "keywords": [
     "deepseek-harness",
