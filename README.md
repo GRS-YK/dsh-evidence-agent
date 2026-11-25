@@ -49,6 +49,49 @@ const chunks = chunkMarkdown(markdown, {
 })
 ```
 
+## Embedding 索引
+
+复制本地配置模板：
+
+```powershell
+Copy-Item .env.example .env
+notepad .env
+```
+
+只在本机 `.env` 中填写 `EMBEDDING_API_KEY`。不要提交 `.env`。
+
+也可以用隐藏输入自动写入本地配置：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\set-embedding-key.ps1
+```
+
+测试 Embedding 接口：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\test-embedding.ps1
+```
+
+建立或增量更新向量索引：
+
+```powershell
+npm run embeddings:build
+```
+
+检查索引是否与当前文档和模型配置一致：
+
+```powershell
+npm run embeddings:check
+```
+
+强制重新生成全部向量：
+
+```powershell
+npm run embeddings:rebuild
+```
+
+生成文件位于 `knowledge/index/vectors.jsonl`，该目录不会提交到 Git。
+
 ## 安装
 
     dsh plugin --profile web add <本目录>

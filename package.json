@@ -19,7 +19,10 @@
     "test": "node --test",
     "test:coverage": "node --test --experimental-test-coverage",
     "knowledge:manifest": "node scripts/build-knowledge-manifest.js",
-    "knowledge:manifest:check": "node scripts/build-knowledge-manifest.js --check"
+    "knowledge:manifest:check": "node scripts/build-knowledge-manifest.js --check",
+    "embeddings:build": "node scripts/build-embedding-index.js",
+    "embeddings:check": "node scripts/build-embedding-index.js --check",
+    "embeddings:rebuild": "node scripts/build-embedding-index.js --force"
   },
   "keywords": [
     "deepseek-harness",
