@@ -148,3 +148,26 @@ npm.cmd run bm25:search -- "BM25Okapi" --top-k 3
 ```
 
 BM25 只做关键词匹配，不会翻译中英文。当前资料以英文为主，因此中文查询能否命中取决于语料中是否真的出现相应中文词项；跨语言语义召回将在 Dense + BM25 + RRF 阶段完成。
+
+## Dense + BM25 + RRF 混合检索
+
+混合检索会分别从向量索引和 BM25 索引取候选，再用 Reciprocal Rank Fusion
+按名次融合。单一检索器漏掉的片段，只要在另一个检索器中排名靠前，仍有机会进入最终结果。
+
+运行前需要本地向量索引、BM25 索引和 `EMBEDDING_API_KEY`：
+
+```powershell
+npm.cmd run embeddings:build
+npm.cmd run bm25:build
+npm.cmd run hybrid:search -- "reciprocal rank fusion" --top-k 5
+```
+
+可以调整每个检索器提供的候选数量：
+
+```powershell
+npm.cmd run hybrid:search -- "how does BM25 work" --top-k 3 --candidate-k 20
+```
+
+输出中的 `dense=#2` 表示该 chunk 在向量检索中排第 2，`lexical=#1`
+表示在 BM25 中排第 1，`rrf` 是最终融合分数。查询阶段需要调用一次
+Embedding API；索引重建和普通 BM25 查询不需要调用该接口。

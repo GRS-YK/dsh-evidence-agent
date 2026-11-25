@@ -25,7 +25,8 @@
     "embeddings:rebuild": "node scripts/build-embedding-index.js --force",
     "bm25:build": "node scripts/build-bm25-index.js",
     "bm25:check": "node scripts/build-bm25-index.js --check",
-    "bm25:search": "node scripts/search-bm25.js"
+    "bm25:search": "node scripts/search-bm25.js",
+    "hybrid:search": "node scripts/search-hybrid.js"
   },
   "keywords": [
     "deepseek-harness",
