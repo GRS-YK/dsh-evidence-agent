@@ -171,3 +171,30 @@ npm.cmd run hybrid:search -- "how does BM25 work" --top-k 3 --candidate-k 20
 输出中的 `dense=#2` 表示该 chunk 在向量检索中排第 2，`lexical=#1`
 表示在 BM25 中排第 1，`rrf` 是最终融合分数。查询阶段需要调用一次
 Embedding API；索引重建和普通 BM25 查询不需要调用该接口。
+
+## Agent 工具
+
+插件注册以下三个工具：
+
+- `dsh-evidence-agent_kb_search`：默认 Hybrid 检索，也可选择 `dense` 或 `lexical`。
+- `dsh-evidence-agent_kb_read`：读取命中 chunk 前后相邻内容。
+- `dsh-evidence-agent_kb_list_sources`：列出知识库中的文档及 chunk 数量。
+
+`kb_search` 的输出包含 `doc_id`、`chunk_id`、标题、真实行号、分数和证据正文。
+单次搜索正文最多 12,000 个 Unicode 字符；`kb_read` 也有独立字符上限。
+
+缺少 Dense 索引、Embedding Key 或网络不可用时，Hybrid 搜索会降级为 BM25。
+索引为空、结果为空、超时或参数错误都会返回结构化提示，不会让整个 Agent 会话崩溃。
+
+运行全部工具与检索测试：
+
+```powershell
+npm.cmd test
+```
+
+修改插件后需要重启正在运行的 DSH Web 实例，或者让 DSH hot reload 完成重载。
+重启后可以要求 Agent：
+
+```text
+使用 dsh-evidence-agent_kb_search 检索 reciprocal rank fusion，并给出引用。
+```

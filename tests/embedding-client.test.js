@@ -170,3 +170,54 @@ test('invalid client configuration and empty batches fail early', async () => {
   })
   await assert.rejects(() => client.embed([]), /non-empty array/)
 })
+
+test('caller cancellation stops an in-flight embedding request', async () => {
+  const controller = new AbortController()
+  const abortReason = new DOMException('user stopped search', 'AbortError')
+  let requestStarted = false
+  const client = createOpenAICompatibleEmbeddingClient({
+    baseUrl: 'https://example.test/v1',
+    apiKey: 'key',
+    model: 'model',
+    dimension: 2,
+    maxRetries: 3,
+    fetchImpl: async (_url, options) => {
+      requestStarted = true
+      return new Promise((_resolve, reject) => {
+        options.signal.addEventListener('abort', () => reject(options.signal.reason), {
+          once: true,
+        })
+      })
+    },
+  })
+
+  const request = client.embed(['hello'], { signal: controller.signal })
+  await new Promise(resolve => setTimeout(resolve, 5))
+  controller.abort(abortReason)
+
+  await assert.rejects(request, error => error === abortReason)
+  assert.equal(requestStarted, true)
+})
+
+test('an already cancelled embedding request performs no network work', async () => {
+  const controller = new AbortController()
+  const abortReason = new DOMException('cancelled before start', 'AbortError')
+  controller.abort(abortReason)
+  let calls = 0
+  const client = createOpenAICompatibleEmbeddingClient({
+    baseUrl: 'https://example.test/v1',
+    apiKey: 'key',
+    model: 'model',
+    dimension: 2,
+    fetchImpl: async () => {
+      calls++
+      return successfulResponse([{ index: 0, embedding: [1, 0] }])
+    },
+  })
+
+  await assert.rejects(
+    () => client.embed(['hello'], { signal: controller.signal }),
+    error => error === abortReason,
+  )
+  assert.equal(calls, 0)
+})

@@ -1,5 +1,5 @@
 /**
- * dsh-evidence-agent host plugin — replace this description with yours.
+ * dsh-evidence-agent — source-backed Agentic RAG for DeepSeek Harness.
  *
  * Skeleton follows the official tool tutorial plus a runtime skill. The
  * bundled SKILL.md teaches the agent when and how to use the tool.
@@ -9,17 +9,19 @@
 
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import { buildGreeting } from './lib/hello.js'
+import { defineTool, ToolArgsError } from '@deepseek-ai/dsh-tools'
+import { registerEvidenceTools } from './lib/evidence-plugin.js'
+import { EvidenceService } from './lib/evidence-service.js'
 
 export const name = 'dsh-evidence-agent'
 
 export const inject = ['tools']
 
 const SKILL_FILE = fileURLToPath(new URL('./skills/dsh-evidence-agent/SKILL.md', import.meta.url))
+const REPO_ROOT = fileURLToPath(new URL('.', import.meta.url))
 
 /**
- * Register the example tool and the companion skill.
+ * Register evidence tools and the companion research skill.
  * @param {import('@deepseek-ai/cordis').Context} ctx - cordis context.
  * @param {object} [config] - optional plugin config from cordis.patch.yml.
  */
@@ -31,7 +33,7 @@ export function apply(ctx, config) {
     try {
       disposers.push(skills.register({
         name: 'dsh-evidence-agent',
-        description: 'A DeepSeek Harness plugin.',
+        description: 'Search and read source-backed evidence from the project knowledge base.',
         content: readFileSync(SKILL_FILE, 'utf8'),
         source: 'runtime',
         provider: 'dsh-evidence-agent',
@@ -41,24 +43,17 @@ export function apply(ctx, config) {
     }
   }
 
-  disposers.push(ctx.tools.register(defineTool({
-    name: 'dsh-evidence-agent_greet',
-    description: 'Greet someone by name. Replace with your real tool.',
-    parameters: {
-      name: {
-        type: 'string',
-        required: true,
-        description: 'The name to greet',
-      },
-    },
-    output: {
-      schema: { type: 'string' },
-      render: (_args, value) => [{ type: 'text', text: value }],
-    },
-    async execute(args) {
-      return buildGreeting(args.name)
-    },
-  })))
+  const service = new EvidenceService({
+    repoRoot: REPO_ROOT,
+    searchTimeoutMs: config?.searchTimeoutMs,
+    readTimeoutMs: config?.readTimeoutMs,
+  })
+  disposers.push(...registerEvidenceTools({
+    ctx,
+    defineTool,
+    ToolArgsError,
+    service,
+  }))
 
   return () => {
     for (const dispose of disposers) {

@@ -8,6 +8,9 @@
     "index.js",
     "lib",
     "skills",
+    "knowledge/sources.json",
+    "knowledge/manifest.jsonl",
+    "knowledge/canonical",
     "cordis.patch.yml"
   ],
   "dsh": {
