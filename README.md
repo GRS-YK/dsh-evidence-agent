@@ -21,6 +21,16 @@ Generated with [dsh-plugin-starter](https://github.com/ciceroyang/dsh-plugin-sta
 
     dsh --profile headless --patch ./dev.cordis.yml "任务"
 
+## 知识库清单
+
+根据 `knowledge/sources.json` 重新计算规范文档的大小和 SHA-256：
+
+    npm run knowledge:manifest
+
+检查已提交的 `knowledge/manifest.jsonl` 是否过期：
+
+    npm run knowledge:manifest:check
+
 ## 安装
 
     dsh plugin --profile web add <本目录>

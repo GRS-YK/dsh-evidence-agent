@@ -16,7 +16,9 @@
     }
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "knowledge:manifest": "node scripts/build-knowledge-manifest.js",
+    "knowledge:manifest:check": "node scripts/build-knowledge-manifest.js --check"
   },
   "keywords": [
     "deepseek-harness",
